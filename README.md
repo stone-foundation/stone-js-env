@@ -11,8 +11,6 @@ Fluent and simple API to deal with .env file and env variables for both browser 
 
 ---
 
-# Env Library Documentation
-
 ## Synopsis
 
 The `@stone-js/env` library provides utility functions for managing environment variables in JavaScript and TypeScript applications. It helps developers retrieve, validate, and transform environment variables, supporting different data types such as strings, numbers, booleans, arrays, objects, and more. This ensures that the environment configuration is reliable and meets the expected requirements. This library is compatible with both vanilla JavaScript and TypeScript.
@@ -44,7 +42,6 @@ The `Env` module can only be imported via ESM import syntax:
 ```typescript
 import * as Env from '@stone-js/env';
 ```
-
 
 ## Getting Started
 
