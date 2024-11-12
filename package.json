@@ -1,6 +1,6 @@
 {
   "name": "@stone-js/env",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Fluent and simple API to deal with .env file and env variables for both browser and node.js.",
   "author": "Mr. Stone <evensstone@gmail.com>",
   "license": "MIT",
@@ -27,7 +27,10 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": ["./dist/declarations.d.ts", "./dist/Env.d.ts"],
+      "types": [
+        "./dist/declarations.d.ts",
+        "./dist/Env.d.ts"
+      ],
       "default": "./dist/index.js"
     }
   },
