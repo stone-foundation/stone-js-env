@@ -25,12 +25,10 @@
     "/dist"
   ],
   "type": "module",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": [
-        "./dist/declarations.d.ts",
-        "./dist/Env.d.ts"
-      ],
+      "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
   },
