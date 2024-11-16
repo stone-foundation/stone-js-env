@@ -6,6 +6,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## Unreleased
 
+## [0.0.21](https://github.com/stonemjs/env/compare/v0.0.3...v0.0.21) (2024-11-16)
+
+
+### Miscellaneous Chores
+
+* fix package.json ([b9384c9](https://github.com/stonemjs/env/commit/b9384c9f2eaa1e1c01fd002559fef84ab6a88948))
+
 ## [0.0.3](https://github.com/stonemjs/env/compare/v0.0.2...v0.0.3) (2024-11-16)
 
 
