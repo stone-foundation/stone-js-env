@@ -4,7 +4,10 @@
   "description": "Fluent and simple API to deal with .env file and env variables for both browser and node.js.",
   "author": "Mr. Stone <evensstone@gmail.com>",
   "license": "Apache-2.0",
-  "repository": "git@github.com:stonemjs/env.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/stonemjs/env.git"
+  },
   "homepage": "https://github.com/stonemjs/env#readme",
   "bugs": {
     "url": "https://github.com/stonemjs/env/issues"
