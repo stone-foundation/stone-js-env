@@ -6,6 +6,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## Unreleased
 
+## [0.0.3](https://github.com/stonemjs/env/compare/v0.0.2...v0.0.3) (2024-11-16)
+
+
+### Miscellaneous Chores
+
+* add rollup plugin to bundle types ([96dee2f](https://github.com/stonemjs/env/commit/96dee2f278491cb2869d6ae837fc4b816fbc34ce))
+
 ## [0.0.2](https://github.com/stonemjs/env/compare/v0.0.1...v0.0.2) (2024-11-12)
 
 
