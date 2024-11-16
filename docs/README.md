@@ -1,4 +1,4 @@
-**Env Documentation v0.0.0** • [**Docs**](modules.md)
+**Env Documentation v0.0.2** • [**Docs**](modules.md)
 
 ***
 
@@ -14,8 +14,6 @@
 Fluent and simple API to deal with .env file and env variables for both browser and node.js.
 
 ---
-
-# Env Library Documentation
 
 ## Synopsis
 

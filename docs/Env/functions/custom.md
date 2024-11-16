@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.0**](../../README.md) • **Docs**
+[**Env Documentation v0.0.2**](../../README.md) • **Docs**
 
 ***
 
-[Env Documentation v0.0.0](../../modules.md) / [Env](../README.md) / custom
+[Env Documentation v0.0.2](../../modules.md) / [Env](../README.md) / custom
 
 # Function: custom()
 
@@ -32,4 +32,4 @@ The validated value of the environment variable.
 
 ## Defined in
 
-[Env.ts:293](https://github.com/stonemjs/env/blob/6d8870e32e6f150443b9e0e2704e84c73ef41979/src/Env.ts#L293)
+[Env.ts:293](https://github.com/stonemjs/env/blob/695c924d11add6d23337945b2dffa763b18be5aa/src/Env.ts#L293)

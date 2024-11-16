@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.0**](README.md) • **Docs**
+[**Env Documentation v0.0.2**](README.md) • **Docs**
 
 ***
 
-# Env Documentation v0.0.0
+# Env Documentation v0.0.2
 
 ## Modules
 

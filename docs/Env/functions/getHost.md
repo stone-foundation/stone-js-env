@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.0**](../../README.md) • **Docs**
+[**Env Documentation v0.0.2**](../../README.md) • **Docs**
 
 ***
 
-[Env Documentation v0.0.0](../../modules.md) / [Env](../README.md) / getHost
+[Env Documentation v0.0.2](../../modules.md) / [Env](../README.md) / getHost
 
 # Function: getHost()
 
@@ -28,4 +28,4 @@ The value as a host.
 
 ## Defined in
 
-[Env.ts:267](https://github.com/stonemjs/env/blob/6d8870e32e6f150443b9e0e2704e84c73ef41979/src/Env.ts#L267)
+[Env.ts:267](https://github.com/stonemjs/env/blob/695c924d11add6d23337945b2dffa763b18be5aa/src/Env.ts#L267)
