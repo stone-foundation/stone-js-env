@@ -1,3 +1,4 @@
+import { EnvError } from './EnvError'
 import { Options } from './declarations'
 import isIP from 'validator/es/lib/isIP'
 import isURL from 'validator/es/lib/isURL'
@@ -74,7 +75,7 @@ export function getNumber (key: string, options?: Options): number {
     key,
     (key: string, value: string, opts) => {
       if (value !== undefined && !isNumeric(value)) {
-        throw new TypeError(`Value for ${key} must be a valid number, received: ${value}`)
+        throw new EnvError(`Value for ${key} must be a valid number, received: ${value}`)
       }
 
       return Number(value ?? opts.default)
@@ -95,7 +96,7 @@ export function getBoolean (key: string, options?: Options): boolean {
     key,
     (key: string, value: string, opts) => {
       if (value !== undefined && !['true', 'false', '1', '0'].includes(String(value).toLowerCase())) {
-        throw new TypeError(`Value for ${key} must be a valid boolean, received: ${value}`)
+        throw new EnvError(`Value for ${key} must be a valid boolean, received: ${value}`)
       }
 
       return ['true', '1'].includes(String(value).toLowerCase())
@@ -171,7 +172,7 @@ export function getJson (key: string, options?: Options): unknown {
         return JSON.parse(value)
       } catch (e: any) {
         if (opts.optional === false) {
-          throw new TypeError(`Value for ${key} must be valid JSON. Error: ${e.message as string}`)
+          throw new EnvError(`Value for ${key} must be valid JSON. Error: ${e.message as string}`)
         }
         return opts.default
       }
@@ -206,7 +207,7 @@ export function getEnum (key: string, enums: string[] | Options = [], defaultVal
     key,
     (key, value: string, opts) => {
       if (opts.optional === false && (value === undefined || opts.enums === undefined || !(opts.enums?.includes(value)))) {
-        throw new TypeError(`Value for ${key} must be one of: ${String(opts.enums)}. Received: ${value}`)
+        throw new EnvError(`Value for ${key} must be one of: ${String(opts.enums)}. Received: ${value}`)
       }
 
       return value ?? opts.default
@@ -227,7 +228,7 @@ export function getEmail (key: string, options?: Options): string {
     key,
     (key, value: string, opts) => {
       if (value !== undefined && !isEmail(value, { require_tld: opts.tld ?? true })) {
-        throw new TypeError(`Value for ${key} must be a valid email address. Received: ${value}`)
+        throw new EnvError(`Value for ${key} must be a valid email address. Received: ${value}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -248,7 +249,7 @@ export function getUrl (key: string, options?: Options): string {
     key,
     (key, value: string, opts) => {
       if (value !== undefined && !isURL(value, { require_tld: opts.tld ?? true, require_protocol: opts.protocol ?? true })) {
-        throw new TypeError(`Value for ${key} must be a valid URL. Received: ${value}`)
+        throw new EnvError(`Value for ${key} must be a valid URL. Received: ${value}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -273,7 +274,7 @@ export function getHost (key: string, options?: Options): string {
         (!isIP(value, opts.version ?? 4) &&
           !isURL(value, { require_tld: opts.tld ?? true, require_protocol: opts.protocol ?? true }))
       ) {
-        throw new TypeError(`Value for ${key} must be a valid host (URL or IP). Received: ${value}`)
+        throw new EnvError(`Value for ${key} must be a valid host (URL or IP). Received: ${value}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -302,7 +303,7 @@ export function custom (key: string, validator: (key: string, value: any, option
   options = normalizeOptions(options)
 
   if (options.optional === false && isEmpty(value)) {
-    throw new TypeError(`Value for ${key} is required.`)
+    throw new EnvError(`Value for ${key} is required.`)
   }
 
   const validatedValue = validator(key, value, options)

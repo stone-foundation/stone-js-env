@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.2**](../../README.md) • **Docs**
+[**Env Documentation v0.0.3**](../../README.md) • **Docs**
 
 ***
 
-[Env Documentation v0.0.2](../../modules.md) / [Env](../README.md) / is
+[Env Documentation v0.0.3](../../modules.md) / [Env](../README.md) / is
 
 # Function: is()
 
@@ -24,4 +24,4 @@ True if the current environment matches the given value, otherwise false.
 
 ## Defined in
 
-[Env.ts:335](https://github.com/stonemjs/env/blob/695c924d11add6d23337945b2dffa763b18be5aa/src/Env.ts#L335)
+[Env.ts:336](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/Env.ts#L336)

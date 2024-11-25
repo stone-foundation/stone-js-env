@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.2**](../README.md) • **Docs**
+[**Env Documentation v0.0.3**](../README.md) • **Docs**
 
 ***
 
-[Env Documentation v0.0.2](../modules.md) / declarations
+[Env Documentation v0.0.3](../modules.md) / declarations
 
 # declarations
 

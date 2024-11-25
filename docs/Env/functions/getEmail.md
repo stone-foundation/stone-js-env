@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.2**](../../README.md) • **Docs**
+[**Env Documentation v0.0.3**](../../README.md) • **Docs**
 
 ***
 
-[Env Documentation v0.0.2](../../modules.md) / [Env](../README.md) / getEmail
+[Env Documentation v0.0.3](../../modules.md) / [Env](../README.md) / getEmail
 
 # Function: getEmail()
 
@@ -28,4 +28,4 @@ The value as an email.
 
 ## Defined in
 
-[Env.ts:225](https://github.com/stonemjs/env/blob/695c924d11add6d23337945b2dffa763b18be5aa/src/Env.ts#L225)
+[Env.ts:226](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/Env.ts#L226)

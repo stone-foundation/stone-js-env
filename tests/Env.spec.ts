@@ -1,4 +1,5 @@
 import * as Env from '../src/Env'
+import { EnvError } from '../src/EnvError'
 
 describe('Env class', () => {
   // Mocking process.env for testing purposes
@@ -89,7 +90,7 @@ describe('Env class', () => {
       process.env.CACHE_TEST = 'newValue'
       expect(Env.get('CACHE_TEST')).toBe('cachedValue') // Should still return the cached value
     })
-  
+
     it('clear cache', () => {
       process.env.CACHE_TEST = 'cachedValue'
       Env.get('CACHE_TEST')
@@ -103,153 +104,153 @@ describe('Env class', () => {
     it('custom validator', () => {
       const customValidator = (key: string, value: string): string => {
         if (value !== 'customValue') {
-          throw new TypeError(`Value for ${key} must be 'customValue'.`)
+          throw new EnvError(`Value for ${key} must be 'customValue'.`)
         }
         return value
       }
       process.env.TEST_CUSTOM = 'customValue'
       expect(Env.custom('TEST_CUSTOM', customValidator)).toBe('customValue')
     })
-  });
+  })
 
   describe('getString', () => {
     it('should return the default value when the key does not exist', () => {
-      expect(Env.getString('MISSING_KEY', { format: 'email', default: 'Default Value' })).toBe('Default Value');
-      expect(Env.getString('MISSING_KEY', { format: 'host', default: 'Default Value' })).toBe('Default Value');
-      expect(Env.getString('MISSING_KEY', { format: 'url', default: 'Default Value' })).toBe('Default Value');
-    });
+      expect(Env.getString('MISSING_KEY', { format: 'email', default: 'Default Value' })).toBe('Default Value')
+      expect(Env.getString('MISSING_KEY', { format: 'host', default: 'Default Value' })).toBe('Default Value')
+      expect(Env.getString('MISSING_KEY', { format: 'url', default: 'Default Value' })).toBe('Default Value')
+    })
 
     it('should throw an error when an invalid URL is provided with url format', () => {
-      process.env.INVALID_URL = 'not-a-url';
-      expect(() => Env.getString('INVALID_URL', { format: 'url' })).toThrow('Value for INVALID_URL must be a valid URL.');
-    });
-  
+      process.env.INVALID_URL = 'not-a-url'
+      expect(() => Env.getString('INVALID_URL', { format: 'url' })).toThrow('Value for INVALID_URL must be a valid URL.')
+    })
+
     it('should throw an error when an invalid host is provided with host format', () => {
-      process.env.INVALID_HOST = 'not-a-host';
-      expect(() => Env.getString('INVALID_HOST', { format: 'host' })).toThrow('Value for INVALID_HOST must be a valid host (URL or IP). Received: not-a-host');
-    });
-  
+      process.env.INVALID_HOST = 'not-a-host'
+      expect(() => Env.getString('INVALID_HOST', { format: 'host' })).toThrow('Value for INVALID_HOST must be a valid host (URL or IP). Received: not-a-host')
+    })
+
     it('should throw an error when an invalid email is provided with email format', () => {
-      process.env.INVALID_EMAIL = 'not-an-email';
-      expect(() => Env.getString('INVALID_EMAIL', { format: 'email' })).toThrow('Value for INVALID_EMAIL must be a valid email address.');
-    });
-  });
+      process.env.INVALID_EMAIL = 'not-an-email'
+      expect(() => Env.getString('INVALID_EMAIL', { format: 'email' })).toThrow('Value for INVALID_EMAIL must be a valid email address.')
+    })
+  })
 
   describe('getNumber', () => {
     it('should return the default value when the key does not exist', () => {
-      expect(Env.getNumber('MISSING_KEY', { default: '55' })).toBe(55);
-    });
+      expect(Env.getNumber('MISSING_KEY', { default: '55' })).toBe(55)
+    })
 
     it('should throw an error when an invalid number is provided', () => {
-      process.env.TEST_NUMBER = 'not-a-number';
-      expect(() => Env.getNumber('TEST_NUMBER')).toThrow('Value for TEST_NUMBER must be a valid number, received: not-a-number');
-    });
+      process.env.TEST_NUMBER = 'not-a-number'
+      expect(() => Env.getNumber('TEST_NUMBER')).toThrow('Value for TEST_NUMBER must be a valid number, received: not-a-number')
+    })
   })
 
   describe('getBoolean', () => {
     it('should throw an error when an invalid boolean is provided', () => {
-      process.env.TEST_BOOLEAN = 'not-a-boolean';
-      expect(() => Env.getBoolean('TEST_BOOLEAN')).toThrow('Value for TEST_BOOLEAN must be a valid boolean, received: not-a-boolean');
-    });
+      process.env.TEST_BOOLEAN = 'not-a-boolean'
+      expect(() => Env.getBoolean('TEST_BOOLEAN')).toThrow('Value for TEST_BOOLEAN must be a valid boolean, received: not-a-boolean')
+    })
   })
 
   describe('getArray', () => {
     it('should return the default value when the key does not exist', () => {
-      expect(Env.getArray('MISSING_KEY', { default: [12] })).toEqual([12]);
-    });
+      expect(Env.getArray('MISSING_KEY', { default: [12] })).toEqual([12])
+    })
   })
 
   describe('getObject', () => {
     it('should return the default value when the key does not exist', () => {
-      expect(Env.getObject('MISSING_KEY', { default: { key: 'value' } })).toEqual({ key: 'value' });
-    });
+      expect(Env.getObject('MISSING_KEY', { default: { key: 'value' } })).toEqual({ key: 'value' })
+    })
   })
 
   describe('getJson', () => {
     it('should return the default value when the key does not exist', () => {
-      expect(Env.getJson('MISSING_KEY', { default: '55' })).toBe('55');
-    });
+      expect(Env.getJson('MISSING_KEY', { default: '55' })).toBe('55')
+    })
 
     it('should throw an error when an invalid json is provided', () => {
-      process.env.TEST_JSON = '{ "lll:ppp }';
-      expect(() => Env.getJson('TEST_JSON')).toThrow(TypeError);
-    });
+      process.env.TEST_JSON = '{ "lll:ppp }'
+      expect(() => Env.getJson('TEST_JSON')).toThrow(EnvError)
+    })
   })
 
   describe('getEnum', () => {
     it('should throw an error if the value is not one of the allowed enum values and optional is false', () => {
-      process.env.TEST_ENUM = 'invalidOption';
+      process.env.TEST_ENUM = 'invalidOption'
       expect(() => Env.getEnum('TEST_ENUM', ['option1', 'option2'])).toThrow(
         'Value for TEST_ENUM must be one of: option1,option2. Received: invalidOption'
-      );
-    });
+      )
+    })
 
     it('should return the default value if the key does not exist and default is provided', () => {
-      expect(Env.getEnum('MISSING_KEY', ['option1', 'option2'], 'defaultValue')).toBe('defaultValue');
-    });
+      expect(Env.getEnum('MISSING_KEY', ['option1', 'option2'], 'defaultValue')).toBe('defaultValue')
+    })
 
     it('should return the value if options is provided as an object', () => {
-      process.env.TEST_ENUM = 'option2';
-      const options = { enums: ['option1', 'option2'], optional: false };
-      expect(Env.getEnum('TEST_ENUM', options)).toBe('option2');
-    });
-  });
+      process.env.TEST_ENUM = 'option2'
+      const options = { enums: ['option1', 'option2'], optional: false }
+      expect(Env.getEnum('TEST_ENUM', options)).toBe('option2')
+    })
+  })
 
   describe('isProd', () => {
     it('should return true when NODE_ENV is production', () => {
-      process.env.NODE_ENV = 'production';
-      expect(Env.isProd()).toBe(true);
-    });
+      process.env.NODE_ENV = 'production'
+      expect(Env.isProd()).toBe(true)
+    })
 
     it('should return true when NODE_ENV is prod', () => {
-      process.env.NODE_ENV = 'prod';
-      expect(Env.isProd()).toBe(true);
-    });
+      process.env.NODE_ENV = 'prod'
+      expect(Env.isProd()).toBe(true)
+    })
 
     it('should return false when NODE_ENV is not production or prod', () => {
-      process.env.NODE_ENV = 'development';
-      expect(Env.isProd()).toBe(false);
-    });
-  });
+      process.env.NODE_ENV = 'development'
+      expect(Env.isProd()).toBe(false)
+    })
+  })
 
   describe('isNotProd', () => {
     it('should return true when NODE_ENV is not production or prod', () => {
-      process.env.NODE_ENV = 'development';
-      expect(Env.isNotProd()).toBe(true);
-    });
+      process.env.NODE_ENV = 'development'
+      expect(Env.isNotProd()).toBe(true)
+    })
 
     it('should return false when NODE_ENV is production', () => {
-      process.env.NODE_ENV = 'production';
-      expect(Env.isNotProd()).toBe(false);
-    });
+      process.env.NODE_ENV = 'production'
+      expect(Env.isNotProd()).toBe(false)
+    })
 
     it('should return false when NODE_ENV is prod', () => {
-      process.env.NODE_ENV = 'prod';
-      expect(Env.isNotProd()).toBe(false);
-    });
-  });
+      process.env.NODE_ENV = 'prod'
+      expect(Env.isNotProd()).toBe(false)
+    })
+  })
 
   describe('isTesting', () => {
     it('should return true when NODE_ENV is test', () => {
-      process.env.NODE_ENV = 'test';
-      expect(Env.isTesting()).toBe(true);
-    });
+      process.env.NODE_ENV = 'test'
+      expect(Env.isTesting()).toBe(true)
+    })
 
     it('should return true when NODE_ENV is testing', () => {
-      process.env.NODE_ENV = 'testing';
-      expect(Env.isTesting()).toBe(true);
-    });
+      process.env.NODE_ENV = 'testing'
+      expect(Env.isTesting()).toBe(true)
+    })
 
     it('should return false when NODE_ENV is not test or testing', () => {
-      process.env.NODE_ENV = 'production';
-      expect(Env.isTesting()).toBe(false);
-    });
-  });
+      process.env.NODE_ENV = 'production'
+      expect(Env.isTesting()).toBe(false)
+    })
+  })
 
   describe('getEnv', () => {
     it('should return the value from the browser environment if running in a browser', () => {
-      (global as any).window = { __stone_env__: { TEST_KEY: 'browserValue' } };
-      expect(Env.getEnv('TEST_KEY')).toBe('browserValue');
-    });
-  });
+      (global as any).window = { __stone_env__: { TEST_KEY: 'browserValue' } }
+      expect(Env.getEnv('TEST_KEY')).toBe('browserValue')
+    })
+  })
 })
