@@ -6,6 +6,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## Unreleased
 
+## [0.0.22](https://github.com/stonemjs/env/compare/v0.0.21...v0.0.22) (2024-11-25)
+
+
+### Miscellaneous Chores
+
+* add custom env error ([acb3220](https://github.com/stonemjs/env/commit/acb3220b793d6c76b61b684191557738fd0bd7ab))
+
 ## [0.0.21](https://github.com/stonemjs/env/compare/v0.0.3...v0.0.21) (2024-11-16)
 
 
