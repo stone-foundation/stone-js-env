@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.3**](../../README.md) • **Docs**
+[**Env Documentation v0.0.22**](../../README.md) • **Docs**
 
 ***
 
-[Env Documentation v0.0.3](../../modules.md) / [declarations](../README.md) / Options
+[Env Documentation v0.0.22](../../modules.md) / [declarations](../README.md) / Options
 
 # Interface: Options
 
@@ -18,7 +18,7 @@ The default value if the environment variable is not set.
 
 #### Defined in
 
-[declarations.ts:22](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/declarations.ts#L22)
+[declarations.ts:21](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/declarations.ts#L21)
 
 ***
 
@@ -30,7 +30,7 @@ An array of allowed values for enum types.
 
 #### Defined in
 
-[declarations.ts:20](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/declarations.ts#L20)
+[declarations.ts:19](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/declarations.ts#L19)
 
 ***
 
@@ -42,7 +42,7 @@ The format of the environment variable if it's a string. Can be 'url', 'host', o
 
 #### Defined in
 
-[declarations.ts:19](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/declarations.ts#L19)
+[declarations.ts:18](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/declarations.ts#L18)
 
 ***
 
@@ -54,7 +54,7 @@ Whether the environment variable is optional.
 
 #### Defined in
 
-[declarations.ts:21](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/declarations.ts#L21)
+[declarations.ts:20](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/declarations.ts#L20)
 
 ***
 
@@ -66,7 +66,7 @@ Whether a protocol is required for URLs.
 
 #### Defined in
 
-[declarations.ts:25](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/declarations.ts#L25)
+[declarations.ts:24](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/declarations.ts#L24)
 
 ***
 
@@ -78,7 +78,7 @@ The separator for parsing array or object values (default is ',').
 
 #### Defined in
 
-[declarations.ts:23](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/declarations.ts#L23)
+[declarations.ts:22](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/declarations.ts#L22)
 
 ***
 
@@ -90,7 +90,7 @@ Whether a top-level domain is required for URLs or emails.
 
 #### Defined in
 
-[declarations.ts:24](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/declarations.ts#L24)
+[declarations.ts:23](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/declarations.ts#L23)
 
 ***
 
@@ -102,7 +102,7 @@ The type of the environment variable. Can be 'number', 'boolean', 'array', 'obje
 
 #### Defined in
 
-[declarations.ts:18](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/declarations.ts#L18)
+[declarations.ts:17](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/declarations.ts#L17)
 
 ***
 
@@ -114,4 +114,4 @@ The IP version if the type is 'host'.
 
 #### Defined in
 
-[declarations.ts:26](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/declarations.ts#L26)
+[declarations.ts:25](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/declarations.ts#L25)

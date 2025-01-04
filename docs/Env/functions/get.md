@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.3**](../../README.md) • **Docs**
+[**Env Documentation v0.0.22**](../../README.md) • **Docs**
 
 ***
 
-[Env Documentation v0.0.3](../../modules.md) / [Env](../README.md) / get
+[Env Documentation v0.0.22](../../modules.md) / [Env](../README.md) / get
 
 # Function: get()
 
@@ -32,4 +32,4 @@ The value of the environment variable.
 
 ## Defined in
 
-[Env.ts:20](https://github.com/stonemjs/env/blob/b9384c9f2eaa1e1c01fd002559fef84ab6a88948/src/Env.ts#L20)
+[Env.ts:20](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/Env.ts#L20)

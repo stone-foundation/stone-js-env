@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.3**](../README.md) • **Docs**
+[**Env Documentation v0.0.22**](../README.md) • **Docs**
 
 ***
 
-[Env Documentation v0.0.3](../modules.md) / EnvError
+[Env Documentation v0.0.22](../modules.md) / EnvError
 
 # EnvError
 
