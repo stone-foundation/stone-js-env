@@ -2,8 +2,6 @@
 
 All notable changes to the "Stone.js Env" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
 ## Unreleased
 
 ## [0.0.22](https://github.com/stonemjs/env/compare/v0.0.21...v0.0.22) (2024-11-25)
