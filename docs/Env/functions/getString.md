@@ -1,31 +1,33 @@
-[**Env Documentation v0.0.22**](../../README.md) • **Docs**
+[**Env Documentation v0.0.22**](../../README.md)
 
 ***
 
-[Env Documentation v0.0.22](../../modules.md) / [Env](../README.md) / getString
+[Env Documentation](../../modules.md) / [Env](../README.md) / getString
 
 # Function: getString()
 
 > **getString**(`key`, `options`?): `string`
 
+Defined in: [Env.ts:47](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L47)
+
 Get the specified env variable value as a string.
 
 ## Parameters
 
-• **key**: `string`
+### key
+
+`string`
 
 The environment variable key.
 
-• **options?**: `string` \| [`Options`](../../declarations/interfaces/Options.md)
+### options?
 
 Options for retrieving the value.
+
+`string` | [`Options`](../../declarations/interfaces/Options.md)
 
 ## Returns
 
 `string`
 
 The value as a string.
-
-## Defined in
-
-[Env.ts:47](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/Env.ts#L47)

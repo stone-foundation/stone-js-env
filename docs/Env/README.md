@@ -1,14 +1,12 @@
-[**Env Documentation v0.0.22**](../README.md) • **Docs**
+[**Env Documentation v0.0.22**](../README.md)
 
 ***
 
-[Env Documentation v0.0.22](../modules.md) / Env
+[Env Documentation](../modules.md) / Env
 
 # Env
 
-## Index
-
-### Functions
+## Functions
 
 - [clearCache](functions/clearCache.md)
 - [custom](functions/custom.md)

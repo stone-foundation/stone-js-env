@@ -1,13 +1,11 @@
-[**Env Documentation v0.0.22**](../README.md) • **Docs**
+[**Env Documentation v0.0.22**](../README.md)
 
 ***
 
-[Env Documentation v0.0.22](../modules.md) / declarations
+[Env Documentation](../modules.md) / declarations
 
 # declarations
 
-## Index
-
-### Interfaces
+## Interfaces
 
 - [Options](interfaces/Options.md)

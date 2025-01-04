@@ -1,4 +1,4 @@
-[**Env Documentation v0.0.22**](README.md) • **Docs**
+[**Env Documentation v0.0.22**](README.md)
 
 ***
 

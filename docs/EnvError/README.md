@@ -1,13 +1,11 @@
-[**Env Documentation v0.0.22**](../README.md) • **Docs**
+[**Env Documentation v0.0.22**](../README.md)
 
 ***
 
-[Env Documentation v0.0.22](../modules.md) / EnvError
+[Env Documentation](../modules.md) / EnvError
 
 # EnvError
 
-## Index
-
-### Classes
+## Classes
 
 - [EnvError](classes/EnvError.md)

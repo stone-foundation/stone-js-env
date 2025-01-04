@@ -1,4 +1,4 @@
-**Env Documentation v0.0.22** • [**Docs**](modules.md)
+**Env Documentation v0.0.22**
 
 ***
 

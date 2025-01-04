@@ -1,12 +1,14 @@
-[**Env Documentation v0.0.22**](../../README.md) • **Docs**
+[**Env Documentation v0.0.22**](../../README.md)
 
 ***
 
-[Env Documentation v0.0.22](../../modules.md) / [Env](../README.md) / get
+[Env Documentation](../../modules.md) / [Env](../README.md) / get
 
 # Function: get()
 
 > **get**\<`T`\>(`key`, `options`?): `T`
+
+Defined in: [Env.ts:20](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L20)
 
 Get the specified env variable value.
 
@@ -16,11 +18,15 @@ Get the specified env variable value.
 
 ## Parameters
 
-• **key**: `string`
+### key
+
+`string`
 
 The environment variable key.
 
-• **options?**: `any`
+### options?
+
+`any`
 
 Options for retrieving the value.
 
@@ -29,7 +35,3 @@ Options for retrieving the value.
 `T`
 
 The value of the environment variable.
-
-## Defined in
-
-[Env.ts:20](https://github.com/stonemjs/env/blob/124cf5a9bb4d52a40aa57ec31324015ae2a6346e/src/Env.ts#L20)
