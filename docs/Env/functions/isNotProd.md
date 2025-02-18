@@ -8,7 +8,7 @@
 
 > **isNotProd**(): `boolean`
 
-Defined in: [Env.ts:372](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L372)
+Defined in: [Env.ts:561](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L561)
 
 Determine if the current environment is not prod.
 

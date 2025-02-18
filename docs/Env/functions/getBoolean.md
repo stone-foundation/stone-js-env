@@ -6,28 +6,82 @@
 
 # Function: getBoolean()
 
-> **getBoolean**(`key`, `options`?): `boolean`
+Get the specified env variable value as a boolean.
 
-Defined in: [Env.ts:94](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L94)
+## Param
+
+The environment variable key.
+
+## Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getBoolean**(`key`): `boolean` \| `undefined`
+
+Defined in: [Env.ts:143](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L143)
 
 Get the specified env variable value as a boolean.
 
-## Parameters
+### Parameters
 
-### key
+#### key
 
 `string`
 
 The environment variable key.
 
-### options?
+### Returns
+
+`boolean` \| `undefined`
+
+The value as a boolean.
+
+The value as a boolean.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getBoolean**(`key`, `options`): `boolean`
+
+Defined in: [Env.ts:152](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L152)
+
+Get the specified env variable value as a boolean.
+
+### Parameters
+
+#### key
+
+`string`
+
+The environment variable key.
+
+#### options
 
 [`Options`](../../declarations/interfaces/Options.md)
 
 Options for retrieving the value.
 
-## Returns
+### Returns
 
 `boolean`
 
 The value as a boolean.
+
+The value as a boolean.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.

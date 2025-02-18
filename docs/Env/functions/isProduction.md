@@ -8,7 +8,7 @@
 
 > **isProduction**(): `boolean`
 
-Defined in: [Env.ts:345](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L345)
+Defined in: [Env.ts:534](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L534)
 
 Determine if the current environment is production.
 

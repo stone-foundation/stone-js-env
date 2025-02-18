@@ -6,28 +6,82 @@
 
 # Function: getString()
 
-> **getString**(`key`, `options`?): `string`
+Get the specified env variable value as a string.
 
-Defined in: [Env.ts:47](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L47)
+## Param
+
+The environment variable key.
+
+## Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getString**(`key`): `string` \| `undefined`
+
+Defined in: [Env.ts:62](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L62)
 
 Get the specified env variable value as a string.
 
-## Parameters
+### Parameters
 
-### key
+#### key
 
 `string`
 
 The environment variable key.
 
-### options?
+### Returns
+
+`string` \| `undefined`
+
+The value as a string.
+
+The value as a string.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getString**(`key`, `options`): `string`
+
+Defined in: [Env.ts:71](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L71)
+
+Get the specified env variable value as a string.
+
+### Parameters
+
+#### key
+
+`string`
+
+The environment variable key.
+
+#### options
 
 Options for retrieving the value.
 
 `string` | [`Options`](../../declarations/interfaces/Options.md)
 
-## Returns
+### Returns
 
 `string`
 
 The value as a string.
+
+The value as a string.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.

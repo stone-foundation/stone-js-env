@@ -6,28 +6,82 @@
 
 # Function: getArray()
 
-> **getArray**(`key`, `options`?): `string`[]
+Get the specified env variable value as an array.
 
-Defined in: [Env.ts:115](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L115)
+## Param
+
+The environment variable key.
+
+## Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getArray**(`key`): `string`[] \| `undefined`
+
+Defined in: [Env.ts:181](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L181)
 
 Get the specified env variable value as an array.
 
-## Parameters
+### Parameters
 
-### key
+#### key
 
 `string`
 
 The environment variable key.
 
-### options?
+### Returns
+
+`string`[] \| `undefined`
+
+The value as an array of strings.
+
+The value as an array of strings.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getArray**(`key`, `options`): `string`[]
+
+Defined in: [Env.ts:190](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L190)
+
+Get the specified env variable value as an array.
+
+### Parameters
+
+#### key
+
+`string`
+
+The environment variable key.
+
+#### options
 
 [`Options`](../../declarations/interfaces/Options.md)
 
 Options for retrieving the value.
 
-## Returns
+### Returns
 
 `string`[]
 
 The value as an array of strings.
+
+The value as an array of strings.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.

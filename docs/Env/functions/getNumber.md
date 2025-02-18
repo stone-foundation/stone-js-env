@@ -6,28 +6,82 @@
 
 # Function: getNumber()
 
-> **getNumber**(`key`, `options`?): `number`
+Get the specified env variable value as a number.
 
-Defined in: [Env.ts:73](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L73)
+## Param
+
+The environment variable key.
+
+## Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getNumber**(`key`): `number` \| `undefined`
+
+Defined in: [Env.ts:105](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L105)
 
 Get the specified env variable value as a number.
 
-## Parameters
+### Parameters
 
-### key
+#### key
 
 `string`
 
 The environment variable key.
 
-### options?
+### Returns
+
+`number` \| `undefined`
+
+The value as a number.
+
+The value as a number.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getNumber**(`key`, `options`): `number`
+
+Defined in: [Env.ts:114](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L114)
+
+Get the specified env variable value as a number.
+
+### Parameters
+
+#### key
+
+`string`
+
+The environment variable key.
+
+#### options
 
 [`Options`](../../declarations/interfaces/Options.md)
 
 Options for retrieving the value.
 
-## Returns
+### Returns
 
 `number`
 
 The value as a number.
+
+The value as a number.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.

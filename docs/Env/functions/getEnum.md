@@ -6,40 +6,124 @@
 
 # Function: getEnum()
 
-> **getEnum**(`key`, `enums`, `defaultValue`?, `options`?): `string`
+Get the specified env variable value as an enum.
 
-Defined in: [Env.ts:193](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L193)
+## Param
+
+The environment variable key.
+
+## Param
+
+Array of possible enum values or options.
+
+## Param
+
+Default value if not set.
+
+## Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getEnum**(`key`, `enums`): `string` \| `undefined`
+
+Defined in: [Env.ts:309](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L309)
 
 Get the specified env variable value as an enum.
 
-## Parameters
+### Parameters
 
-### key
+#### key
 
 `string`
 
 The environment variable key.
 
-### enums
+#### enums
 
 Array of possible enum values or options.
 
 [`Options`](../../declarations/interfaces/Options.md) | `string`[]
 
-### defaultValue?
+### Returns
+
+`string` \| `undefined`
+
+The value as an enum.
+
+The value as an enum.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Array of possible enum values or options.
+
+### Param
+
+Default value if not set.
+
+### Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getEnum**(`key`, `enums`, `defaultValue`, `options`?): `string`
+
+Defined in: [Env.ts:320](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L320)
+
+Get the specified env variable value as an enum.
+
+### Parameters
+
+#### key
+
+`string`
+
+The environment variable key.
+
+#### enums
+
+Array of possible enum values or options.
+
+[`Options`](../../declarations/interfaces/Options.md) | `string`[]
+
+#### defaultValue
 
 `string`
 
 Default value if not set.
 
-### options?
+#### options?
 
 [`Options`](../../declarations/interfaces/Options.md)
 
 Options for retrieving the value.
 
-## Returns
+### Returns
 
 `string`
 
 The value as an enum.
+
+The value as an enum.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Array of possible enum values or options.
+
+### Param
+
+Default value if not set.
+
+### Param
+
+Options for retrieving the value.
