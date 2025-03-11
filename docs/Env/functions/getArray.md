@@ -20,7 +20,7 @@ Options for retrieving the value.
 
 > **getArray**(`key`): `string`[] \| `undefined`
 
-Defined in: [Env.ts:181](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L181)
+Defined in: [Env.ts:181](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L181)
 
 Get the specified env variable value as an array.
 
@@ -52,7 +52,7 @@ Options for retrieving the value.
 
 > **getArray**(`key`, `options`): `string`[]
 
-Defined in: [Env.ts:190](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L190)
+Defined in: [Env.ts:190](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L190)
 
 Get the specified env variable value as an array.
 

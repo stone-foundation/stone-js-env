@@ -20,7 +20,7 @@ Options for retrieving the value.
 
 > **get**\<`T`\>(`key`): `T` \| `undefined`
 
-Defined in: [Env.ts:19](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L19)
+Defined in: [Env.ts:19](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L19)
 
 Get the specified env variable value.
 
@@ -56,7 +56,7 @@ Options for retrieving the value.
 
 > **get**\<`T`\>(`key`, `options`): `T`
 
-Defined in: [Env.ts:28](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L28)
+Defined in: [Env.ts:28](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L28)
 
 Get the specified env variable value.
 

@@ -1,9 +1,9 @@
 import { EnvError } from './EnvError'
 import { Options } from './declarations'
-import isIP from 'validator/es/lib/isIP'
-import isURL from 'validator/es/lib/isURL'
-import isEmail from 'validator/es/lib/isEmail'
-import isNumeric from 'validator/es/lib/isNumeric'
+import isIP from 'validator/es/lib/isIP.js'
+import isURL from 'validator/es/lib/isURL.js'
+import isEmail from 'validator/es/lib/isEmail.js'
+import isNumeric from 'validator/es/lib/isNumeric.js'
 
 /**
  * Env module to manage environment variables.

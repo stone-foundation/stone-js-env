@@ -20,7 +20,7 @@ Options for retrieving the value.
 
 > **getEmail**(`key`): `string` \| `undefined`
 
-Defined in: [Env.ts:363](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L363)
+Defined in: [Env.ts:363](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L363)
 
 Get the specified env variable value as an email.
 
@@ -52,7 +52,7 @@ Options for retrieving the value.
 
 > **getEmail**(`key`, `options`): `string`
 
-Defined in: [Env.ts:372](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L372)
+Defined in: [Env.ts:372](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L372)
 
 Get the specified env variable value as an email.
 

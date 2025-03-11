@@ -8,7 +8,7 @@
 
 > **custom**\<`T`\>(`key`, `validator`, `options`?): `T`
 
-Defined in: [Env.ts:483](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L483)
+Defined in: [Env.ts:483](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L483)
 
 Get the specified env variable value with custom validator.
 

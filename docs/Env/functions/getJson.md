@@ -20,7 +20,7 @@ Options for retrieving the value.
 
 > **getJson**(`key`): `unknown` \| `undefined`
 
-Defined in: [Env.ts:267](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L267)
+Defined in: [Env.ts:267](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L267)
 
 Get the specified env variable value as JSON.
 
@@ -52,7 +52,7 @@ Options for retrieving the value.
 
 > **getJson**(`key`, `options`): `unknown`
 
-Defined in: [Env.ts:276](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L276)
+Defined in: [Env.ts:276](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L276)
 
 Get the specified env variable value as JSON.
 

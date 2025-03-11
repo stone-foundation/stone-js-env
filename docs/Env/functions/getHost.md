@@ -20,7 +20,7 @@ Options for retrieving the value.
 
 > **getHost**(`key`): `string` \| `undefined`
 
-Defined in: [Env.ts:439](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L439)
+Defined in: [Env.ts:439](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L439)
 
 Get the specified env variable value as a host (IP or URL).
 
@@ -52,7 +52,7 @@ Options for retrieving the value.
 
 > **getHost**(`key`, `options`): `string`
 
-Defined in: [Env.ts:448](https://github.com/stonemjs/env/blob/03a15d504630d9dcaa3aa5276370578245d77a29/src/Env.ts#L448)
+Defined in: [Env.ts:448](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L448)
 
 Get the specified env variable value as a host (IP or URL).
 
