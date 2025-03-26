@@ -102,7 +102,7 @@ describe('Env class', () => {
 
   describe('custom', () => {
     it('custom validator', () => {
-      const customValidator = (key: string, value: string): string => {
+      const customValidator = (key: string, value: string | undefined): string => {
         if (value !== 'customValue') {
           throw new EnvError(`Value for ${key} must be 'customValue'.`)
         }
@@ -244,13 +244,6 @@ describe('Env class', () => {
     it('should return false when NODE_ENV is not test or testing', () => {
       process.env.NODE_ENV = 'production'
       expect(Env.isTesting()).toBe(false)
-    })
-  })
-
-  describe('getEnv', () => {
-    it('should return the value from the browser environment if running in a browser', () => {
-      (global as any).window = { __stone_env__: { TEST_KEY: 'browserValue' } }
-      expect(Env.getEnv('TEST_KEY')).toBe('browserValue')
     })
   })
 })

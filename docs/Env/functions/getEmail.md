@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / getEmail
+[Env Documentation](../../README.md) / [Env](../README.md) / getEmail
 
 # Function: getEmail()
 
@@ -18,9 +18,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getEmail**(`key`): `string` \| `undefined`
+> **getEmail**(`key`): `undefined` \| `string`
 
-Defined in: [Env.ts:363](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L363)
+Defined in: [Env.ts:366](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L366)
 
 Get the specified env variable value as an email.
 
@@ -34,9 +34,7 @@ The environment variable key.
 
 ### Returns
 
-`string` \| `undefined`
-
-The value as an email.
+`undefined` \| `string`
 
 The value as an email.
 
@@ -52,7 +50,7 @@ Options for retrieving the value.
 
 > **getEmail**(`key`, `options`): `string`
 
-Defined in: [Env.ts:372](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L372)
+Defined in: [Env.ts:375](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L375)
 
 Get the specified env variable value as an email.
 
@@ -73,8 +71,6 @@ Options for retrieving the value.
 ### Returns
 
 `string`
-
-The value as an email.
 
 The value as an email.
 

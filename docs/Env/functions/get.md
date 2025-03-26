@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / get
+[Env Documentation](../../README.md) / [Env](../README.md) / get
 
 # Function: get()
 
@@ -18,15 +18,17 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **get**\<`T`\>(`key`): `T` \| `undefined`
+> **get**\<`T`\>(`key`): `undefined` \| `T`
 
-Defined in: [Env.ts:19](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L19)
+Defined in: [Env.ts:16](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L16)
 
 Get the specified env variable value.
 
 ### Type Parameters
 
-• **T**
+#### T
+
+`T`
 
 ### Parameters
 
@@ -38,9 +40,7 @@ The environment variable key.
 
 ### Returns
 
-`T` \| `undefined`
-
-The value of the environment variable.
+`undefined` \| `T`
 
 The value of the environment variable.
 
@@ -56,13 +56,15 @@ Options for retrieving the value.
 
 > **get**\<`T`\>(`key`, `options`): `T`
 
-Defined in: [Env.ts:28](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L28)
+Defined in: [Env.ts:25](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L25)
 
 Get the specified env variable value.
 
 ### Type Parameters
 
-• **T**
+#### T
+
+`T`
 
 ### Parameters
 
@@ -81,8 +83,6 @@ Options for retrieving the value.
 ### Returns
 
 `T`
-
-The value of the environment variable.
 
 The value of the environment variable.
 

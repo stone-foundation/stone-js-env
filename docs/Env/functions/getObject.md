@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / getObject
+[Env Documentation](../../README.md) / [Env](../README.md) / getObject
 
 # Function: getObject()
 
@@ -18,9 +18,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getObject**(`key`): `Record`\<`string`, `any`\> \| `undefined`
+> **getObject**(`key`): `undefined` \| `Record`\<`string`, `any`\>
 
-Defined in: [Env.ts:221](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L221)
+Defined in: [Env.ts:221](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L221)
 
 Get the specified env variable value as an object.
 
@@ -34,9 +34,7 @@ The environment variable key.
 
 ### Returns
 
-`Record`\<`string`, `any`\> \| `undefined`
-
-The value as an object.
+`undefined` \| `Record`\<`string`, `any`\>
 
 The value as an object.
 
@@ -50,9 +48,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getObject**(`key`, `options`): `Record`\<`string`, `any`\> \| `undefined`
+> **getObject**(`key`, `options`): `undefined` \| `Record`\<`string`, `any`\>
 
-Defined in: [Env.ts:230](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L230)
+Defined in: [Env.ts:230](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L230)
 
 Get the specified env variable value as an object.
 
@@ -72,9 +70,7 @@ Options for retrieving the value.
 
 ### Returns
 
-`Record`\<`string`, `any`\> \| `undefined`
-
-The value as an object.
+`undefined` \| `Record`\<`string`, `any`\>
 
 The value as an object.
 

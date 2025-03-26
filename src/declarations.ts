@@ -1,5 +1,3 @@
-import { IPVersion } from 'validator/es/lib/isIP'
-
 /**
  * Options for retrieving environment variables.
  *
@@ -11,7 +9,6 @@ import { IPVersion } from 'validator/es/lib/isIP'
  * @property separator - The separator for parsing array or object values (default is ',').
  * @property tld - Whether a top-level domain is required for URLs or emails.
  * @property protocol - Whether a protocol is required for URLs.
- * @property version - The IP version if the type is 'host'.
  */
 export interface Options {
   type?: 'number' | 'boolean' | 'array' | 'object' | 'json' | 'enum' | 'email' | 'host' | 'url' | 'string'
@@ -22,5 +19,4 @@ export interface Options {
   separator?: string
   tld?: boolean
   protocol?: boolean
-  version?: IPVersion
 }

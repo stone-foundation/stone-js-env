@@ -1,9 +1,6 @@
 import { EnvError } from './EnvError'
 import { Options } from './declarations'
-import isIP from 'validator/es/lib/isIP.js'
-import isURL from 'validator/es/lib/isURL.js'
-import isEmail from 'validator/es/lib/isEmail.js'
-import isNumeric from 'validator/es/lib/isNumeric.js'
+import { email, safeParse, string, pipe, number, ip, url } from 'valibot'
 
 /**
  * Env module to manage environment variables.
@@ -124,8 +121,11 @@ export function getNumber (key: string, options?: Options): number | undefined {
   return custom(
     key,
     (key: string, value: string | undefined, opts) => {
-      if (value !== undefined && !isNumeric(value)) {
-        throw new EnvError(`Value for ${key} must be a valid number, received: ${value}`)
+      const schema = pipe(number())
+      const result = safeParse(schema, value)
+
+      if (value !== undefined && !result.success) {
+        throw new EnvError(`Value for ${key} must be a valid number, received: ${String(value)}`)
       }
 
       return Number(value) ?? opts.default
@@ -245,7 +245,10 @@ export function getObject (key: string, options?: Options): Record<string, any> 
           value.split(opts.separator ?? ',').map((v: string) => {
             const [k, w] = v.split(':').map((w: string) => w.trim())
             let parsedValue: string | number | boolean = w
-            if (isNumeric(w)) parsedValue = Number(w)
+            const schema = pipe(number())
+            const result = safeParse(schema, w)
+
+            if (w !== undefined && result.success) parsedValue = Number(w)
             if (['true', 'false', '1', '0'].includes(w.toLowerCase())) parsedValue = ['true', '1'].includes(w.toLowerCase())
             return [k, parsedValue]
           })
@@ -382,8 +385,11 @@ export function getEmail (key: string, options?: Options): string | undefined {
   return custom(
     key,
     (key, value: string | undefined, opts) => {
-      if (value !== undefined && !isEmail(value, { require_tld: opts.tld ?? true })) {
-        throw new EnvError(`Value for ${key} must be a valid email address. Received: ${value}`)
+      const schema = pipe(string(), email())
+      const result = safeParse(schema, value)
+
+      if (value !== undefined && !result.success) {
+        throw new EnvError(`Value for ${key} must be a valid email address. Received: ${String(value)}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -420,8 +426,11 @@ export function getUrl (key: string, options?: Options): string | undefined {
   return custom(
     key,
     (key, value: string | undefined, opts) => {
-      if (value !== undefined && !isURL(value, { require_tld: opts.tld ?? true, require_protocol: opts.protocol ?? true })) {
-        throw new EnvError(`Value for ${key} must be a valid URL. Received: ${value}`)
+      const schema = pipe(string(), url())
+      const result = safeParse(schema, value)
+
+      if (value !== undefined && !result.success) {
+        throw new EnvError(`Value for ${key} must be a valid URL. Received: ${String(value)}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -458,12 +467,13 @@ export function getHost (key: string, options?: Options): string | undefined {
   return custom(
     key,
     (key, value: string | undefined, opts) => {
-      if (
-        value !== undefined &&
-        (!isIP(value, opts.version ?? 4) &&
-          !isURL(value, { require_tld: opts.tld ?? true, require_protocol: opts.protocol ?? true }))
-      ) {
-        throw new EnvError(`Value for ${key} must be a valid host (URL or IP). Received: ${value}`)
+      const schemaIp = pipe(string(), ip())
+      const schemaUrl = pipe(string(), url())
+      const resultIp = safeParse(schemaIp, value)
+      const resultUrl = safeParse(schemaUrl, value)
+
+      if (value !== undefined && !resultIp.success && !resultUrl.success) {
+        throw new EnvError(`Value for ${key} must be a valid host (URL or IP). Received: ${String(value)}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -513,7 +523,7 @@ export function custom<T = any> (key: string, validator: (key: string, value: st
  * @returns The value of the environment variable.
  */
 export function getEnv (key: string): string | undefined {
-  return isBrowser() ? (window as any).__stone_env__[key] : process.env[key]
+  return isBrowser() ? window.process.env[key] : process.env[key]
 }
 
 /**

@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / getArray
+[Env Documentation](../../README.md) / [Env](../README.md) / getArray
 
 # Function: getArray()
 
@@ -18,9 +18,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getArray**(`key`): `string`[] \| `undefined`
+> **getArray**(`key`): `undefined` \| `string`[]
 
-Defined in: [Env.ts:181](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L181)
+Defined in: [Env.ts:181](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L181)
 
 Get the specified env variable value as an array.
 
@@ -34,9 +34,7 @@ The environment variable key.
 
 ### Returns
 
-`string`[] \| `undefined`
-
-The value as an array of strings.
+`undefined` \| `string`[]
 
 The value as an array of strings.
 
@@ -52,7 +50,7 @@ Options for retrieving the value.
 
 > **getArray**(`key`, `options`): `string`[]
 
-Defined in: [Env.ts:190](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L190)
+Defined in: [Env.ts:190](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L190)
 
 Get the specified env variable value as an array.
 
@@ -73,8 +71,6 @@ Options for retrieving the value.
 ### Returns
 
 `string`[]
-
-The value as an array of strings.
 
 The value as an array of strings.
 

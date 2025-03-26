@@ -1,8 +1,8 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / getJson
+[Env Documentation](../../README.md) / [Env](../README.md) / getJson
 
 # Function: getJson()
 
@@ -18,9 +18,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getJson**(`key`): `unknown` \| `undefined`
+> **getJson**(`key`): `unknown`
 
-Defined in: [Env.ts:267](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L267)
+Defined in: [Env.ts:270](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L270)
 
 Get the specified env variable value as JSON.
 
@@ -34,9 +34,7 @@ The environment variable key.
 
 ### Returns
 
-`unknown` \| `undefined`
-
-The value as a JSON object.
+`unknown`
 
 The value as a JSON object.
 
@@ -52,7 +50,7 @@ Options for retrieving the value.
 
 > **getJson**(`key`, `options`): `unknown`
 
-Defined in: [Env.ts:276](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L276)
+Defined in: [Env.ts:279](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L279)
 
 Get the specified env variable value as JSON.
 
@@ -73,8 +71,6 @@ Options for retrieving the value.
 ### Returns
 
 `unknown`
-
-The value as a JSON object.
 
 The value as a JSON object.
 

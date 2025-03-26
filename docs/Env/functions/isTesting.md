@@ -1,14 +1,14 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / isTesting
+[Env Documentation](../../README.md) / [Env](../README.md) / isTesting
 
 # Function: isTesting()
 
 > **isTesting**(): `boolean`
 
-Defined in: [Env.ts:570](https://github.com/stonemjs/env/blob/320b081e7574fcb1610bef7c2b4d7c8fcf9f9dd5/src/Env.ts#L570)
+Defined in: [Env.ts:580](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L580)
 
 Determine if the current environment is testing.
 
