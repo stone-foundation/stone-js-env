@@ -4,6 +4,7 @@ import { EnvError } from '../src/EnvError'
 describe('Env class', () => {
   // Mocking process.env for testing purposes
   beforeEach(() => {
+    globalThis.window = undefined as any
     process.env = {
       ...process.env,
       TEST_STRING: 'Hello',
@@ -13,6 +14,7 @@ describe('Env class', () => {
       TEST_ARRAY: 'one,two,three',
       TEST_OBJECT: 'key1:value1,key2:42,key3:true',
       TEST_JSON: '{"name":"John", "age":30}',
+      TEST_BAD_JSON: '{"name""John", "age":30}',
       TEST_ENUM: 'option1',
       TEST_EMAIL: 'test@example.com',
       TEST_URL: 'https://example.com',
@@ -22,7 +24,7 @@ describe('Env class', () => {
     Env.clearCache()
   })
 
-  describe('getString', () => {
+  describe('get items', () => {
     it('get string value', () => {
       expect(Env.get('TEST_STRING')).toBe('Hello')
     })
@@ -55,6 +57,10 @@ describe('Env class', () => {
       expect(Env.get('TEST_JSON', { type: 'json' })).toEqual({ name: 'John', age: 30 })
     })
 
+    it('get default on bad JSON value', () => {
+      expect(Env.getJson('TEST_BAD_JSON', { default: { name: 'John' } })).toEqual({ name: 'John' })
+    })
+
     it('get enum value', () => {
       expect(Env.getEnum('TEST_ENUM', ['option1', 'option2'])).toBe('option1')
     })
@@ -73,6 +79,11 @@ describe('Env class', () => {
 
     it('handle missing value with default', () => {
       expect(Env.get('MISSING_KEY', { default: 'defaultValue' })).toBe('defaultValue')
+    })
+
+    it('getEnv from browser', () => {
+      globalThis.window = { process: { env: { TEST_STRING: 'Hello' } } } as any
+      expect(Env.get('TEST_STRING', { type: 'string' })).toBe('Hello')
     })
 
     it('throw error for missing required value', () => {

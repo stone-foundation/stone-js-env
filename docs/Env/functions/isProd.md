@@ -8,7 +8,7 @@
 
 > **isProd**(): `boolean`
 
-Defined in: [Env.ts:562](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L562)
+Defined in: [Env.ts:562](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L562)
 
 Determine if the current environment is prod.
 

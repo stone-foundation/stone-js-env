@@ -20,7 +20,7 @@ Options for retrieving the value.
 
 > **getBoolean**(`key`): `undefined` \| `boolean`
 
-Defined in: [Env.ts:143](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L143)
+Defined in: [Env.ts:143](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L143)
 
 Get the specified env variable value as a boolean.
 
@@ -50,7 +50,7 @@ Options for retrieving the value.
 
 > **getBoolean**(`key`, `options`): `boolean`
 
-Defined in: [Env.ts:152](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L152)
+Defined in: [Env.ts:152](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L152)
 
 Get the specified env variable value as a boolean.
 

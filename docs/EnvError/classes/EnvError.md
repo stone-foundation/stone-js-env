@@ -6,7 +6,7 @@
 
 # Class: EnvError
 
-Defined in: [EnvError.ts:4](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/EnvError.ts#L4)
+Defined in: [EnvError.ts:4](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/EnvError.ts#L4)
 
 Custom error for env operations.
 
@@ -20,7 +20,7 @@ Custom error for env operations.
 
 > **new EnvError**(`message`): `EnvError`
 
-Defined in: [EnvError.ts:5](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/EnvError.ts#L5)
+Defined in: [EnvError.ts:5](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/EnvError.ts#L5)
 
 #### Parameters
 

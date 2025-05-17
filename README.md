@@ -1,6 +1,6 @@
 # StoneJS: env
 
-[![npm](https://img.shields.io/npm/l/@stone-js/env)](https://opensource.org/licenses/Apache-2.0)
+[![npm](https://img.shields.io/npm/l/@stone-js/env)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/v/@stone-js/env)](https://www.npmjs.com/package/@stone-js/env)
 [![npm](https://img.shields.io/npm/dm/@stone-js/env)](https://www.npmjs.com/package/@stone-js/env)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025)

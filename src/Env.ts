@@ -122,13 +122,13 @@ export function getNumber (key: string, options?: Options): number | undefined {
     key,
     (key: string, value: string | undefined, opts) => {
       const schema = pipe(number())
-      const result = safeParse(schema, value)
+      const result = safeParse(schema, Number(value))
 
       if (value !== undefined && !result.success) {
         throw new EnvError(`Value for ${key} must be a valid number, received: ${String(value)}`)
       }
 
-      return Number(value) ?? opts.default
+      return Number(value ?? opts.default)
     },
     options
   )
@@ -246,7 +246,7 @@ export function getObject (key: string, options?: Options): Record<string, any> 
             const [k, w] = v.split(':').map((w: string) => w.trim())
             let parsedValue: string | number | boolean = w
             const schema = pipe(number())
-            const result = safeParse(schema, w)
+            const result = safeParse(schema, Number(w))
 
             if (w !== undefined && result.success) parsedValue = Number(w)
             if (['true', 'false', '1', '0'].includes(w.toLowerCase())) parsedValue = ['true', '1'].includes(w.toLowerCase())
@@ -290,7 +290,7 @@ export function getJson (key: string, options?: Options): unknown | undefined {
     key,
     (key, value, opts) => {
       try {
-        return JSON.parse(value ?? '{}')
+        return value === undefined ? opts.default : JSON.parse(value)
       } catch (e: any) {
         if (opts.optional === false) {
           throw new EnvError(`Value for ${key} must be valid JSON. Error: ${e.message as string}`)
@@ -523,7 +523,7 @@ export function custom<T = any> (key: string, validator: (key: string, value: st
  * @returns The value of the environment variable.
  */
 export function getEnv (key: string): string | undefined {
-  return isBrowser() ? window.process.env[key] : process.env[key]
+  return isBrowser() ? window.process?.env?.[key] : process.env[key]
 }
 
 /**

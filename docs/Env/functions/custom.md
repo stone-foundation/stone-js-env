@@ -6,9 +6,9 @@
 
 # Function: custom()
 
-> **custom**\<`T`\>(`key`, `validator`, `options`?): `T`
+> **custom**\<`T`\>(`key`, `validator`, `options?`): `T`
 
-Defined in: [Env.ts:493](https://github.com/stonemjs/env/blob/0f18502ac1c79248db96a2e62a62648f583cf9e8/src/Env.ts#L493)
+Defined in: [Env.ts:493](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L493)
 
 Get the specified env variable value with custom validator.
 
