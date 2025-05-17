@@ -4,6 +4,13 @@ All notable changes to the "Stone.js Env" extension will be documented in this f
 
 ## Unreleased
 
+## [0.1.0](https://github.com/stonemjs/env/compare/v0.0.22...v0.1.0) (2025-05-17)
+
+
+### Features
+
+* replace validator by valibot and change the license to MIT ([3dd8789](https://github.com/stonemjs/env/commit/3dd8789a11a1ef26c64d9df7b509fe4a8a8b1e51))
+
 ## [0.0.22](https://github.com/stonemjs/env/compare/v0.0.21...v0.0.22) (2024-11-25)
 
 
