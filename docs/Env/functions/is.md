@@ -1,14 +1,14 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / is
+[Env Documentation](../../README.md) / [Env](../README.md) / is
 
 # Function: is()
 
 > **is**(`env`): `boolean`
 
-Defined in: [Env.ts:336](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L336)
+Defined in: [Env.ts:535](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L535)
 
 Determine if the current environment matches the given value.
 

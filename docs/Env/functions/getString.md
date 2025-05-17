@@ -1,33 +1,83 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / getString
+[Env Documentation](../../README.md) / [Env](../README.md) / getString
 
 # Function: getString()
 
-> **getString**(`key`, `options`?): `string`
+Get the specified env variable value as a string.
 
-Defined in: [Env.ts:47](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L47)
+## Param
+
+The environment variable key.
+
+## Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getString**(`key`): `undefined` \| `string`
+
+Defined in: [Env.ts:59](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L59)
 
 Get the specified env variable value as a string.
 
-## Parameters
+### Parameters
 
-### key
+#### key
 
 `string`
 
 The environment variable key.
 
-### options?
+### Returns
+
+`undefined` \| `string`
+
+The value as a string.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getString**(`key`, `options`): `string`
+
+Defined in: [Env.ts:68](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L68)
+
+Get the specified env variable value as a string.
+
+### Parameters
+
+#### key
+
+`string`
+
+The environment variable key.
+
+#### options
 
 Options for retrieving the value.
 
 `string` | [`Options`](../../declarations/interfaces/Options.md)
 
-## Returns
+### Returns
 
 `string`
 
 The value as a string.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.

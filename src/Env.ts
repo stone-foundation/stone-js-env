@@ -1,9 +1,6 @@
 import { EnvError } from './EnvError'
 import { Options } from './declarations'
-import isIP from 'validator/es/lib/isIP'
-import isURL from 'validator/es/lib/isURL'
-import isEmail from 'validator/es/lib/isEmail'
-import isNumeric from 'validator/es/lib/isNumeric'
+import { email, safeParse, string, pipe, number, ip, url } from 'valibot'
 
 /**
  * Env module to manage environment variables.
@@ -14,10 +11,27 @@ let envCache: Record<string, any> = {}
  * Get the specified env variable value.
  *
  * @param key - The environment variable key.
+ * @returns The value of the environment variable.
+ */
+export function get<T> (key: string): T | undefined
+
+/**
+ * Get the specified env variable value.
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value of the environment variable.
  */
-export function get<T> (key: string, options?: Options | any): T {
+export function get<T> (key: string, options: Options | any): T
+
+/**
+ * Get the specified env variable value.
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value of the environment variable.
+ */
+export function get<T> (key: string, options?: Options | any): T | undefined {
   if (options === undefined) return getString(key) as T
   if (typeof options === 'function') return custom(key, options)
 
@@ -27,7 +41,6 @@ export function get<T> (key: string, options?: Options | any): T {
     array: getArray,
     object: getObject,
     json: getJson,
-    enum: getEnum,
     email: getEmail,
     host: getHost,
     url: getUrl,
@@ -41,10 +54,27 @@ export function get<T> (key: string, options?: Options | any): T {
  * Get the specified env variable value as a string.
  *
  * @param key - The environment variable key.
+ * @returns The value as a string.
+ */
+export function getString (key: string): string | undefined
+
+/**
+ * Get the specified env variable value as a string.
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value as a string.
  */
-export function getString (key: string, options?: Options | string): string {
+export function getString (key: string, options: Options | string): string
+
+/**
+ * Get the specified env variable value as a string.
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value as a string.
+ */
+export function getString (key: string, options?: Options | string): string | undefined {
   return custom(
     key,
     (key, value, opts) => {
@@ -67,15 +97,35 @@ export function getString (key: string, options?: Options | string): string {
  * Get the specified env variable value as a number.
  *
  * @param key - The environment variable key.
+ * @returns The value as a number.
+ */
+export function getNumber (key: string): number | undefined
+
+/**
+ * Get the specified env variable value as a number.
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value as a number.
  */
-export function getNumber (key: string, options?: Options): number {
+export function getNumber (key: string, options: Options): number
+
+/**
+ * Get the specified env variable value as a number.
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value as a number.
+ */
+export function getNumber (key: string, options?: Options): number | undefined {
   return custom(
     key,
-    (key: string, value: string, opts) => {
-      if (value !== undefined && !isNumeric(value)) {
-        throw new EnvError(`Value for ${key} must be a valid number, received: ${value}`)
+    (key: string, value: string | undefined, opts) => {
+      const schema = pipe(number())
+      const result = safeParse(schema, Number(value))
+
+      if (value !== undefined && !result.success) {
+        throw new EnvError(`Value for ${key} must be a valid number, received: ${String(value)}`)
       }
 
       return Number(value ?? opts.default)
@@ -88,13 +138,30 @@ export function getNumber (key: string, options?: Options): number {
  * Get the specified env variable value as a boolean.
  *
  * @param key - The environment variable key.
+ * @returns The value as a boolean.
+ */
+export function getBoolean (key: string): boolean | undefined
+
+/**
+ * Get the specified env variable value as a boolean.
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value as a boolean.
  */
-export function getBoolean (key: string, options?: Options): boolean {
+export function getBoolean (key: string, options: Options): boolean
+
+/**
+ * Get the specified env variable value as a boolean.
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value as a boolean.
+ */
+export function getBoolean (key: string, options?: Options): boolean | undefined {
   return custom(
     key,
-    (key: string, value: string, opts) => {
+    (key: string, value: string | undefined) => {
       if (value !== undefined && !['true', 'false', '1', '0'].includes(String(value).toLowerCase())) {
         throw new EnvError(`Value for ${key} must be a valid boolean, received: ${value}`)
       }
@@ -109,20 +176,37 @@ export function getBoolean (key: string, options?: Options): boolean {
  * Get the specified env variable value as an array.
  *
  * @param key - The environment variable key.
+ * @returns The value as an array of strings.
+ */
+export function getArray (key: string): string[] | undefined
+
+/**
+ * Get the specified env variable value as an array.
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value as an array of strings.
  */
-export function getArray (key: string, options?: Options): string[] {
+export function getArray (key: string, options: Options): string[]
+
+/**
+ * Get the specified env variable value as an array.
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value as an array of strings.
+ */
+export function getArray (key: string, options?: Options): string[] | undefined {
   return custom(
     key,
-    (key, value, opts) => {
-      value = value !== undefined
+    (_key, value, opts) => {
+      const output = value !== undefined
         ? value
           .split(opts.separator ?? ',')
           .map((v: string) => v.trim())
-        : null
+        : undefined
 
-      return value ?? opts.default
+      return output ?? opts.default
     },
     options
   )
@@ -132,26 +216,46 @@ export function getArray (key: string, options?: Options): string[] {
  * Get the specified env variable value as an object.
  *
  * @param key - The environment variable key.
+ * @returns The value as an object.
+ */
+export function getObject (key: string): Record<string, any> | undefined
+
+/**
+ * Get the specified env variable value as an object.
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value as an object.
  */
-export function getObject (key: string, options?: Options): Record<string, any> {
+export function getObject (key: string, options: Options): Record<string, any> | undefined
+
+/**
+ * Get the specified env variable value as an object.
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value as an object.
+ */
+export function getObject (key: string, options?: Options): Record<string, any> | undefined {
   return custom(
     key,
-    (key, value, opts) => {
-      value = value !== undefined
+    (_key, value, opts) => {
+      const output = value !== undefined
         ? Object.fromEntries(
           value.split(opts.separator ?? ',').map((v: string) => {
             const [k, w] = v.split(':').map((w: string) => w.trim())
             let parsedValue: string | number | boolean = w
-            if (isNumeric(w)) parsedValue = Number(w)
+            const schema = pipe(number())
+            const result = safeParse(schema, Number(w))
+
+            if (w !== undefined && result.success) parsedValue = Number(w)
             if (['true', 'false', '1', '0'].includes(w.toLowerCase())) parsedValue = ['true', '1'].includes(w.toLowerCase())
             return [k, parsedValue]
           })
         )
-        : null
+        : undefined
 
-      return value ?? opts.default
+      return output ?? opts.default
     },
     options
   )
@@ -161,15 +265,32 @@ export function getObject (key: string, options?: Options): Record<string, any> 
  * Get the specified env variable value as JSON.
  *
  * @param key - The environment variable key.
+ * @returns The value as a JSON object.
+ */
+export function getJson (key: string): unknown | undefined
+
+/**
+ * Get the specified env variable value as JSON.
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value as a JSON object.
  */
-export function getJson (key: string, options?: Options): unknown {
+export function getJson (key: string, options: Options): unknown
+
+/**
+ * Get the specified env variable value as JSON.
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value as a JSON object.
+ */
+export function getJson (key: string, options?: Options): unknown | undefined {
   return custom(
     key,
     (key, value, opts) => {
       try {
-        return JSON.parse(value)
+        return value === undefined ? opts.default : JSON.parse(value)
       } catch (e: any) {
         if (opts.optional === false) {
           throw new EnvError(`Value for ${key} must be valid JSON. Error: ${e.message as string}`)
@@ -186,11 +307,31 @@ export function getJson (key: string, options?: Options): unknown {
  *
  * @param key - The environment variable key.
  * @param enums - Array of possible enum values or options.
+ * @returns The value as an enum.
+ */
+export function getEnum (key: string, enums: string[] | Options): string | undefined
+
+/**
+ * Get the specified env variable value as an enum.
+ *
+ * @param key - The environment variable key.
+ * @param enums - Array of possible enum values or options.
  * @param defaultValue - Default value if not set.
  * @param options - Options for retrieving the value.
  * @returns The value as an enum.
  */
-export function getEnum (key: string, enums: string[] | Options = [], defaultValue?: string, options?: Options): string {
+export function getEnum (key: string, enums: string[] | Options, defaultValue: string, options?: Options): string
+
+/**
+ * Get the specified env variable value as an enum.
+ *
+ * @param key - The environment variable key.
+ * @param enums - Array of possible enum values or options.
+ * @param defaultValue - Default value if not set.
+ * @param options - Options for retrieving the value.
+ * @returns The value as an enum.
+ */
+export function getEnum (key: string, enums: string[] | Options = [], defaultValue?: string, options?: Options): string | undefined {
   options = options ?? {}
 
   if (Array.isArray(enums)) {
@@ -205,9 +346,9 @@ export function getEnum (key: string, enums: string[] | Options = [], defaultVal
 
   return custom(
     key,
-    (key, value: string, opts) => {
+    (key, value: string | undefined, opts) => {
       if (opts.optional === false && (value === undefined || opts.enums === undefined || !(opts.enums?.includes(value)))) {
-        throw new EnvError(`Value for ${key} must be one of: ${String(opts.enums)}. Received: ${value}`)
+        throw new EnvError(`Value for ${key} must be one of: ${String(opts.enums)}. Received: ${String(value)}`)
       }
 
       return value ?? opts.default
@@ -220,15 +361,35 @@ export function getEnum (key: string, enums: string[] | Options = [], defaultVal
  * Get the specified env variable value as an email.
  *
  * @param key - The environment variable key.
+ * @returns The value as an email.
+ */
+export function getEmail (key: string): string | undefined
+
+/**
+ * Get the specified env variable value as an email.
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value as an email.
  */
-export function getEmail (key: string, options?: Options): string {
+export function getEmail (key: string, options: Options): string
+
+/**
+ * Get the specified env variable value as an email.
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value as an email.
+ */
+export function getEmail (key: string, options?: Options): string | undefined {
   return custom(
     key,
-    (key, value: string, opts) => {
-      if (value !== undefined && !isEmail(value, { require_tld: opts.tld ?? true })) {
-        throw new EnvError(`Value for ${key} must be a valid email address. Received: ${value}`)
+    (key, value: string | undefined, opts) => {
+      const schema = pipe(string(), email())
+      const result = safeParse(schema, value)
+
+      if (value !== undefined && !result.success) {
+        throw new EnvError(`Value for ${key} must be a valid email address. Received: ${String(value)}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -241,15 +402,35 @@ export function getEmail (key: string, options?: Options): string {
  * Get the specified env variable value as a URL.
  *
  * @param key - The environment variable key.
+ * @returns The value as a URL.
+ */
+export function getUrl (key: string): string | undefined
+
+/**
+ * Get the specified env variable value as a URL.
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value as a URL.
  */
-export function getUrl (key: string, options?: Options): string {
+export function getUrl (key: string, options: Options): string
+
+/**
+ * Get the specified env variable value as a URL.
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value as a URL.
+ */
+export function getUrl (key: string, options?: Options): string | undefined {
   return custom(
     key,
-    (key, value: string, opts) => {
-      if (value !== undefined && !isURL(value, { require_tld: opts.tld ?? true, require_protocol: opts.protocol ?? true })) {
-        throw new EnvError(`Value for ${key} must be a valid URL. Received: ${value}`)
+    (key, value: string | undefined, opts) => {
+      const schema = pipe(string(), url())
+      const result = safeParse(schema, value)
+
+      if (value !== undefined && !result.success) {
+        throw new EnvError(`Value for ${key} must be a valid URL. Received: ${String(value)}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -262,19 +443,37 @@ export function getUrl (key: string, options?: Options): string {
  * Get the specified env variable value as a host (IP or URL).
  *
  * @param key - The environment variable key.
+ * @returns The value as a host.
+ */
+export function getHost (key: string): string | undefined
+
+/**
+ * Get the specified env variable value as a host (IP or URL).
+ *
+ * @param key - The environment variable key.
  * @param options - Options for retrieving the value.
  * @returns The value as a host.
  */
-export function getHost (key: string, options?: Options): string {
+export function getHost (key: string, options: Options): string
+
+/**
+ * Get the specified env variable value as a host (IP or URL).
+ *
+ * @param key - The environment variable key.
+ * @param options - Options for retrieving the value.
+ * @returns The value as a host.
+ */
+export function getHost (key: string, options?: Options): string | undefined {
   return custom(
     key,
-    (key, value: string, opts) => {
-      if (
-        value !== undefined &&
-        (!isIP(value, opts.version ?? 4) &&
-          !isURL(value, { require_tld: opts.tld ?? true, require_protocol: opts.protocol ?? true }))
-      ) {
-        throw new EnvError(`Value for ${key} must be a valid host (URL or IP). Received: ${value}`)
+    (key, value: string | undefined, opts) => {
+      const schemaIp = pipe(string(), ip())
+      const schemaUrl = pipe(string(), url())
+      const resultIp = safeParse(schemaIp, value)
+      const resultUrl = safeParse(schemaUrl, value)
+
+      if (value !== undefined && !resultIp.success && !resultUrl.success) {
+        throw new EnvError(`Value for ${key} must be a valid host (URL or IP). Received: ${String(value)}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -291,7 +490,7 @@ export function getHost (key: string, options?: Options): string {
  * @param options - Options for retrieving the value.
  * @returns The validated value of the environment variable.
  */
-export function custom (key: string, validator: (key: string, value: any, options: Options) => any, options?: Options | any): any {
+export function custom<T = any> (key: string, validator: (key: string, value: string | undefined, options: Options) => T, options?: Options | T): T {
   const cachedValue = envCache[key]
 
   if (cachedValue !== undefined) {
@@ -324,7 +523,7 @@ export function custom (key: string, validator: (key: string, value: any, option
  * @returns The value of the environment variable.
  */
 export function getEnv (key: string): string | undefined {
-  return isBrowser() ? (window as any).__stone_env__[key] : process.env[key]
+  return isBrowser() ? window.process?.env?.[key] : process.env[key]
 }
 
 /**
@@ -423,7 +622,7 @@ function normalizeOptions (options?: Options | any): Options {
  * @param value - The value to check.
  * @returns True if the value is empty, otherwise false.
  */
-function isEmpty (value: any): boolean {
+function isEmpty<T> (value: any): value is T {
   if (value === undefined || value === null) return true
   // if (Array.isArray(value) && value.length === 0) return true
   // if (typeof value === 'object' && Object.keys(value).length === 0) return true

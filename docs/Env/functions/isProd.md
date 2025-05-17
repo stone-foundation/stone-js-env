@@ -1,14 +1,14 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / isProd
+[Env Documentation](../../README.md) / [Env](../README.md) / isProd
 
 # Function: isProd()
 
 > **isProd**(): `boolean`
 
-Defined in: [Env.ts:363](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L363)
+Defined in: [Env.ts:562](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L562)
 
 Determine if the current environment is prod.
 

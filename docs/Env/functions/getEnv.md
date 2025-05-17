@@ -1,14 +1,14 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / getEnv
+[Env Documentation](../../README.md) / [Env](../README.md) / getEnv
 
 # Function: getEnv()
 
-> **getEnv**(`key`): `string` \| `undefined`
+> **getEnv**(`key`): `undefined` \| `string`
 
-Defined in: [Env.ts:326](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L326)
+Defined in: [Env.ts:525](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L525)
 
 Get system env variables.
 For Node.js environment get variables from process.env at runtime.
@@ -24,6 +24,6 @@ The environment variable key.
 
 ## Returns
 
-`string` \| `undefined`
+`undefined` \| `string`
 
 The value of the environment variable.

@@ -1,16 +1,22 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / custom
+[Env Documentation](../../README.md) / [Env](../README.md) / custom
 
 # Function: custom()
 
-> **custom**(`key`, `validator`, `options`?): `any`
+> **custom**\<`T`\>(`key`, `validator`, `options?`): `T`
 
-Defined in: [Env.ts:294](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L294)
+Defined in: [Env.ts:493](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L493)
 
 Get the specified env variable value with custom validator.
+
+## Type Parameters
+
+### T
+
+`T` = `any`
 
 ## Parameters
 
@@ -22,18 +28,18 @@ The environment variable key.
 
 ### validator
 
-(`key`, `value`, `options`) => `any`
+(`key`, `value`, `options`) => `T`
 
 The custom validation function.
 
 ### options?
 
-`any`
-
 Options for retrieving the value.
+
+[`Options`](../../declarations/interfaces/Options.md) | `T`
 
 ## Returns
 
-`any`
+`T`
 
 The validated value of the environment variable.

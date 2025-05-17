@@ -1,37 +1,95 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / get
+[Env Documentation](../../README.md) / [Env](../README.md) / get
 
 # Function: get()
 
-> **get**\<`T`\>(`key`, `options`?): `T`
+Get the specified env variable value.
 
-Defined in: [Env.ts:20](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L20)
+## Param
+
+The environment variable key.
+
+## Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **get**\<`T`\>(`key`): `undefined` \| `T`
+
+Defined in: [Env.ts:16](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L16)
 
 Get the specified env variable value.
 
-## Type Parameters
+### Type Parameters
 
-• **T**
+#### T
 
-## Parameters
+`T`
 
-### key
+### Parameters
+
+#### key
 
 `string`
 
 The environment variable key.
 
-### options?
+### Returns
+
+`undefined` \| `T`
+
+The value of the environment variable.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **get**\<`T`\>(`key`, `options`): `T`
+
+Defined in: [Env.ts:25](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L25)
+
+Get the specified env variable value.
+
+### Type Parameters
+
+#### T
+
+`T`
+
+### Parameters
+
+#### key
+
+`string`
+
+The environment variable key.
+
+#### options
 
 `any`
 
 Options for retrieving the value.
 
-## Returns
+### Returns
 
 `T`
 
 The value of the environment variable.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Options for retrieving the value.

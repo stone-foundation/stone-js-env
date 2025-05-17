@@ -1,45 +1,125 @@
-[**Env Documentation v0.0.22**](../../README.md)
+[**Env Documentation**](../../README.md)
 
 ***
 
-[Env Documentation](../../modules.md) / [Env](../README.md) / getEnum
+[Env Documentation](../../README.md) / [Env](../README.md) / getEnum
 
 # Function: getEnum()
 
-> **getEnum**(`key`, `enums`, `defaultValue`?, `options`?): `string`
+Get the specified env variable value as an enum.
 
-Defined in: [Env.ts:193](https://github.com/stonemjs/env/blob/f87a794c17b46b9f32ee1b61a8ff3fab1da12f18/src/Env.ts#L193)
+## Param
+
+The environment variable key.
+
+## Param
+
+Array of possible enum values or options.
+
+## Param
+
+Default value if not set.
+
+## Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getEnum**(`key`, `enums`): `undefined` \| `string`
+
+Defined in: [Env.ts:312](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L312)
 
 Get the specified env variable value as an enum.
 
-## Parameters
+### Parameters
 
-### key
+#### key
 
 `string`
 
 The environment variable key.
 
-### enums
+#### enums
 
 Array of possible enum values or options.
 
 [`Options`](../../declarations/interfaces/Options.md) | `string`[]
 
-### defaultValue?
+### Returns
+
+`undefined` \| `string`
+
+The value as an enum.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Array of possible enum values or options.
+
+### Param
+
+Default value if not set.
+
+### Param
+
+Options for retrieving the value.
+
+## Call Signature
+
+> **getEnum**(`key`, `enums`, `defaultValue`, `options?`): `string`
+
+Defined in: [Env.ts:323](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L323)
+
+Get the specified env variable value as an enum.
+
+### Parameters
+
+#### key
+
+`string`
+
+The environment variable key.
+
+#### enums
+
+Array of possible enum values or options.
+
+[`Options`](../../declarations/interfaces/Options.md) | `string`[]
+
+#### defaultValue
 
 `string`
 
 Default value if not set.
 
-### options?
+#### options?
 
 [`Options`](../../declarations/interfaces/Options.md)
 
 Options for retrieving the value.
 
-## Returns
+### Returns
 
 `string`
 
 The value as an enum.
+
+### Param
+
+The environment variable key.
+
+### Param
+
+Array of possible enum values or options.
+
+### Param
+
+Default value if not set.
+
+### Param
+
+Options for retrieving the value.
