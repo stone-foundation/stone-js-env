@@ -8,7 +8,7 @@
 
 > **is**(`env`): `boolean`
 
-Defined in: [Env.ts:535](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L535)
+Defined in: [Env.ts:535](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L535)
 
 Determine if the current environment matches the given value.
 

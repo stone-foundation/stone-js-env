@@ -20,7 +20,7 @@ Options for retrieving the value.
 
 > **getObject**(`key`): `undefined` \| `Record`\<`string`, `any`\>
 
-Defined in: [Env.ts:221](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L221)
+Defined in: [Env.ts:221](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L221)
 
 Get the specified env variable value as an object.
 
@@ -50,7 +50,7 @@ Options for retrieving the value.
 
 > **getObject**(`key`, `options`): `undefined` \| `Record`\<`string`, `any`\>
 
-Defined in: [Env.ts:230](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L230)
+Defined in: [Env.ts:230](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L230)
 
 Get the specified env variable value as an object.
 
