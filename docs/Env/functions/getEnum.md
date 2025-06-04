@@ -28,7 +28,7 @@ Options for retrieving the value.
 
 > **getEnum**(`key`, `enums`): `undefined` \| `string`
 
-Defined in: [Env.ts:312](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L312)
+Defined in: [Env.ts:312](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L312)
 
 Get the specified env variable value as an enum.
 
@@ -72,7 +72,7 @@ Options for retrieving the value.
 
 > **getEnum**(`key`, `enums`, `defaultValue`, `options?`): `string`
 
-Defined in: [Env.ts:323](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L323)
+Defined in: [Env.ts:323](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L323)
 
 Get the specified env variable value as an enum.
 

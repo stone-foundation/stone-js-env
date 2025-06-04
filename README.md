@@ -1,10 +1,14 @@
-# StoneJS: env
+# Stone.js - Env
 
 [![npm](https://img.shields.io/npm/l/@stone-js/env)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/v/@stone-js/env)](https://www.npmjs.com/package/@stone-js/env)
 [![npm](https://img.shields.io/npm/dm/@stone-js/env)](https://www.npmjs.com/package/@stone-js/env)
 ![Maintenance](https://img.shields.io/maintenance/yes/2025)
+[![Build Status](https://github.com/stonemjs/env/actions/workflows/main.yml/badge.svg)](https://github.com/stonemjs/env/actions/workflows/main.yml)
 [![Publish Package to npmjs](https://github.com/stonemjs/env/actions/workflows/release.yml/badge.svg)](https://github.com/stonemjs/env/actions/workflows/release.yml)
+[![codecov](https://codecov.io/gh/stonemjs/env/graph/badge.svg?token=5MKS9179YL)](https://codecov.io/gh/stonemjs/env)
+[![CodeQL](https://github.com/stonemjs/env/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/stonemjs/env/security/code-scanning)
+[![Dependabot Status](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/stonemjs/env/network/updates)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 Fluent and simple API to deal with .env file and env variables for both browser and node.js.
@@ -17,30 +21,19 @@ The `@stone-js/env` library provides utility functions for managing environment 
 
 ## Installation
 
-To install the `Env` utility, you need to add it to your project. Assuming it’s part of a package you manage.
-
-NPM:
-
 ```bash
 npm i @stone-js/env
-```
-
-Yarn:
-
-```bash
+# or
 yarn add @stone-js/env
-```
-
-PNPM:
-
-```bash
+# or
 pnpm add @stone-js/env
-```
+````
 
-The `Env` module can only be imported via ESM import syntax:
+> \[!IMPORTANT]
+> This package is **pure ESM**. Ensure your `package.json` includes `"type": "module"` or configure your bundler appropriately.
 
-```typescript
-import * as Env from '@stone-js/env';
+```ts
+import { getNumber, getEmail } from '@stone-js/env'
 ```
 
 ## Getting Started
@@ -245,6 +238,12 @@ Retrieves the value of a system environment variable. Works for both Node.js and
 
 The `@stone-js/env` library is a versatile tool for managing environment variables in both JavaScript and TypeScript projects. It provides robust validation and transformation capabilities for different data types, making it easy to ensure that environment configuration values are reliable and properly formatted. With support for custom validation, caching, and multiple data formats, this library simplifies environment management for modern web and server-side applications.
 
+## Learn More
+
+This package is part of the Stone.js ecosystem, a modern JavaScript framework built around the Continuum Architecture.
+
+Explore the full documentation: https://stonejs.com
+
 ## API documentation
 
 - [API](https://github.com/stonemjs/env/blob/main/docs/modules.md)
@@ -252,3 +251,7 @@ The `@stone-js/env` library is a versatile tool for managing environment variabl
 ## Contributing
 
 See [Contributing Guide](https://github.com/stonemjs/env/blob/main/CONTRIBUTING.md).
+
+## Credits
+
+Thanks to [valibot](https://valibot.dev) for the validation library used in this project.

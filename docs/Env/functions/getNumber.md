@@ -20,7 +20,7 @@ Options for retrieving the value.
 
 > **getNumber**(`key`): `undefined` \| `number`
 
-Defined in: [Env.ts:102](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L102)
+Defined in: [Env.ts:102](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L102)
 
 Get the specified env variable value as a number.
 
@@ -50,7 +50,7 @@ Options for retrieving the value.
 
 > **getNumber**(`key`, `options`): `number`
 
-Defined in: [Env.ts:111](https://github.com/stonemjs/env/blob/23fb7680a09f87fe5357fe99ea6eb16187d6b1f8/src/Env.ts#L111)
+Defined in: [Env.ts:111](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L111)
 
 Get the specified env variable value as a number.
 
