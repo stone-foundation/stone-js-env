@@ -1,9 +1,3 @@
-[**Env Documentation**](../README.md)
-
-***
-
-[Env Documentation](../README.md) / declarations
-
 # declarations
 
 ## Interfaces

@@ -1,9 +1,3 @@
-[**Env Documentation**](../../README.md)
-
-***
-
-[Env Documentation](../../README.md) / [Env](../README.md) / getString
-
 # Function: getString()
 
 Get the specified env variable value as a string.
@@ -18,9 +12,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getString**(`key`): `undefined` \| `string`
-
-Defined in: [Env.ts:59](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L59)
+```ts
+function getString(key): undefined | string;
+```
 
 Get the specified env variable value as a string.
 
@@ -48,9 +42,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getString**(`key`, `options`): `string`
-
-Defined in: [Env.ts:68](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L68)
+```ts
+function getString(key, options): string;
+```
 
 Get the specified env variable value as a string.
 

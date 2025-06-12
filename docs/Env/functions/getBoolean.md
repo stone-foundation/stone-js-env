@@ -1,9 +1,3 @@
-[**Env Documentation**](../../README.md)
-
-***
-
-[Env Documentation](../../README.md) / [Env](../README.md) / getBoolean
-
 # Function: getBoolean()
 
 Get the specified env variable value as a boolean.
@@ -18,9 +12,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getBoolean**(`key`): `undefined` \| `boolean`
-
-Defined in: [Env.ts:143](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L143)
+```ts
+function getBoolean(key): undefined | boolean;
+```
 
 Get the specified env variable value as a boolean.
 
@@ -48,9 +42,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getBoolean**(`key`, `options`): `boolean`
-
-Defined in: [Env.ts:152](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L152)
+```ts
+function getBoolean(key, options): boolean;
+```
 
 Get the specified env variable value as a boolean.
 

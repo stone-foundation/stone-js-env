@@ -1,9 +1,3 @@
-[**Env Documentation**](../../README.md)
-
-***
-
-[Env Documentation](../../README.md) / [Env](../README.md) / getHost
-
 # Function: getHost()
 
 Get the specified env variable value as a host (IP or URL).
@@ -18,9 +12,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getHost**(`key`): `undefined` \| `string`
-
-Defined in: [Env.ts:448](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L448)
+```ts
+function getHost(key): undefined | string;
+```
 
 Get the specified env variable value as a host (IP or URL).
 
@@ -48,9 +42,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getHost**(`key`, `options`): `string`
-
-Defined in: [Env.ts:457](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L457)
+```ts
+function getHost(key, options): string;
+```
 
 Get the specified env variable value as a host (IP or URL).
 
