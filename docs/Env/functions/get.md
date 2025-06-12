@@ -1,9 +1,3 @@
-[**Env Documentation**](../../README.md)
-
-***
-
-[Env Documentation](../../README.md) / [Env](../README.md) / get
-
 # Function: get()
 
 Get the specified env variable value.
@@ -18,9 +12,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **get**\<`T`\>(`key`): `undefined` \| `T`
-
-Defined in: [Env.ts:16](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L16)
+```ts
+function get<T>(key): undefined | T;
+```
 
 Get the specified env variable value.
 
@@ -54,9 +48,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **get**\<`T`\>(`key`, `options`): `T`
-
-Defined in: [Env.ts:25](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L25)
+```ts
+function get<T>(key, options): T;
+```
 
 Get the specified env variable value.
 

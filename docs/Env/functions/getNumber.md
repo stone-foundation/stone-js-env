@@ -1,9 +1,3 @@
-[**Env Documentation**](../../README.md)
-
-***
-
-[Env Documentation](../../README.md) / [Env](../README.md) / getNumber
-
 # Function: getNumber()
 
 Get the specified env variable value as a number.
@@ -18,9 +12,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getNumber**(`key`): `undefined` \| `number`
-
-Defined in: [Env.ts:102](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L102)
+```ts
+function getNumber(key): undefined | number;
+```
 
 Get the specified env variable value as a number.
 
@@ -48,9 +42,9 @@ Options for retrieving the value.
 
 ## Call Signature
 
-> **getNumber**(`key`, `options`): `number`
-
-Defined in: [Env.ts:111](https://github.com/stonemjs/env/blob/48871436343ec344452325bad1e21ee9c466e315/src/Env.ts#L111)
+```ts
+function getNumber(key, options): number;
+```
 
 Get the specified env variable value as a number.
 
