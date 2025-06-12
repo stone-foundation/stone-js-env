@@ -4,6 +4,13 @@ All notable changes to the "Stone.js Env" extension will be documented in this f
 
 ## Unreleased
 
+## [0.1.1](https://github.com/stone-foundation/stone-js-env/compare/v0.1.0...v0.1.1) (2025-06-12)
+
+
+### Miscellaneous Chores
+
+* migrate to stone-foundation, integrate sonar cloud and add security policy ([#12](https://github.com/stone-foundation/stone-js-env/issues/12)) ([0283565](https://github.com/stone-foundation/stone-js-env/commit/02835657738696736f726954b15653abb91b1109))
+
 ## [0.1.0](https://github.com/stone-foundation/stone-js-env/compare/v0.0.22...v0.1.0) (2025-05-17)
 
 
