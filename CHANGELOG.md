@@ -4,6 +4,13 @@ All notable changes to the "Stone.js Env" extension will be documented in this f
 
 ## Unreleased
 
+## [0.1.2](https://github.com/stone-foundation/stone-js-env/compare/v0.1.1...v0.1.2) (2025-07-19)
+
+
+### Bug Fixes
+
+* enhance the API design of environment variable getter functions by allowing union default values ([#17](https://github.com/stone-foundation/stone-js-env/issues/17)) ([9486199](https://github.com/stone-foundation/stone-js-env/commit/9486199501b0be9c05bb2dec0206a375e897d705))
+
 ## [0.1.1](https://github.com/stone-foundation/stone-js-env/compare/v0.1.0...v0.1.1) (2025-06-12)
 
 
