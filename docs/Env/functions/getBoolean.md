@@ -58,9 +58,9 @@ The environment variable key.
 
 #### options
 
-[`Options`](../../declarations/interfaces/Options.md)
-
 Options for retrieving the value.
+
+`boolean` | [`Options`](../../declarations/interfaces/Options.md)
 
 ### Returns
 

@@ -13,10 +13,16 @@ Options for retrieving the value.
 ## Call Signature
 
 ```ts
-function getJson(key): unknown;
+function getJson<R>(key): R;
 ```
 
 Get the specified env variable value as JSON.
+
+### Type Parameters
+
+#### R
+
+`R` = `unknown`
 
 ### Parameters
 
@@ -28,7 +34,7 @@ The environment variable key.
 
 ### Returns
 
-`unknown`
+`R`
 
 The value as a JSON object.
 
@@ -43,10 +49,16 @@ Options for retrieving the value.
 ## Call Signature
 
 ```ts
-function getJson(key, options): unknown;
+function getJson<R>(key, options): R;
 ```
 
 Get the specified env variable value as JSON.
+
+### Type Parameters
+
+#### R
+
+`R` = `unknown`
 
 ### Parameters
 
@@ -58,13 +70,13 @@ The environment variable key.
 
 #### options
 
-[`Options`](../../declarations/interfaces/Options.md)
-
 Options for retrieving the value.
+
+[`Options`](../../declarations/interfaces/Options.md) | `R`
 
 ### Returns
 
-`unknown`
+`R`
 
 The value as a JSON object.
 

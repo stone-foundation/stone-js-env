@@ -29,7 +29,7 @@ npm i @stone-js/env
 yarn add @stone-js/env
 # or
 pnpm add @stone-js/env
-````
+```
 
 > \[!IMPORTANT]
 > This package is **pure ESM**. Ensure your `package.json` includes `"type": "module"` or configure your bundler appropriately.
@@ -244,7 +244,7 @@ The `@stone-js/env` library is a versatile tool for managing environment variabl
 
 This package is part of the Stone.js ecosystem, a modern JavaScript framework built around the Continuum Architecture.
 
-Explore the full documentation: https://stonejs.dev
+Explore the full documentation: [https://stonejs.dev](https://stonejs.dev)
 
 ## API documentation
 
