@@ -32,14 +32,6 @@ The environment variable key.
 
 The value as a number.
 
-### Param
-
-The environment variable key.
-
-### Param
-
-Options for retrieving the value.
-
 ## Call Signature
 
 ```ts
@@ -67,11 +59,3 @@ Options for retrieving the value.
 `number`
 
 The value as a number.
-
-### Param
-
-The environment variable key.
-
-### Param
-
-Options for retrieving the value.
