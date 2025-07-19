@@ -267,7 +267,7 @@ export function getObject (key: string, options?: Options | Record<string, any>)
  * @param key - The environment variable key.
  * @returns The value as a JSON object.
  */
-export function getJson<R = unknown | undefined> (key: string): R
+export function getJson<R = unknown> (key: string): R
 
 /**
  * Get the specified env variable value as JSON.
