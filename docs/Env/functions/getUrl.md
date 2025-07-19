@@ -32,14 +32,6 @@ The environment variable key.
 
 The value as a URL.
 
-### Param
-
-The environment variable key.
-
-### Param
-
-Options for retrieving the value.
-
 ## Call Signature
 
 ```ts
@@ -58,20 +50,12 @@ The environment variable key.
 
 #### options
 
-[`Options`](../../declarations/interfaces/Options.md)
-
 Options for retrieving the value.
+
+`string` | [`Options`](../../declarations/interfaces/Options.md)
 
 ### Returns
 
 `string`
 
 The value as a URL.
-
-### Param
-
-The environment variable key.
-
-### Param
-
-Options for retrieving the value.

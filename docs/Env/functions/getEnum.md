@@ -46,22 +46,6 @@ Array of possible enum values or options.
 
 The value as an enum.
 
-### Param
-
-The environment variable key.
-
-### Param
-
-Array of possible enum values or options.
-
-### Param
-
-Default value if not set.
-
-### Param
-
-Options for retrieving the value.
-
 ## Call Signature
 
 ```ts
@@ -105,19 +89,3 @@ Options for retrieving the value.
 `string`
 
 The value as an enum.
-
-### Param
-
-The environment variable key.
-
-### Param
-
-Array of possible enum values or options.
-
-### Param
-
-Default value if not set.
-
-### Param
-
-Options for retrieving the value.

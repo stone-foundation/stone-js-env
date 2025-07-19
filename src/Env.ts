@@ -108,7 +108,7 @@ export function getNumber (key: string): number | undefined
  * @param options - Options for retrieving the value.
  * @returns The value as a number.
  */
-export function getNumber (key: string, options: Options): number
+export function getNumber (key: string, options: Options | number): number
 
 /**
  * Get the specified env variable value as a number.
@@ -117,7 +117,7 @@ export function getNumber (key: string, options: Options): number
  * @param options - Options for retrieving the value.
  * @returns The value as a number.
  */
-export function getNumber (key: string, options?: Options): number | undefined {
+export function getNumber (key: string, options?: Options | number): number | undefined {
   return custom(
     key,
     (key: string, value: string | undefined, opts) => {
@@ -149,7 +149,7 @@ export function getBoolean (key: string): boolean | undefined
  * @param options - Options for retrieving the value.
  * @returns The value as a boolean.
  */
-export function getBoolean (key: string, options: Options): boolean
+export function getBoolean (key: string, options: Options | boolean): boolean
 
 /**
  * Get the specified env variable value as a boolean.
@@ -158,7 +158,7 @@ export function getBoolean (key: string, options: Options): boolean
  * @param options - Options for retrieving the value.
  * @returns The value as a boolean.
  */
-export function getBoolean (key: string, options?: Options): boolean | undefined {
+export function getBoolean (key: string, options?: Options | boolean): boolean | undefined {
   return custom(
     key,
     (key: string, value: string | undefined) => {
@@ -187,7 +187,7 @@ export function getArray (key: string): string[] | undefined
  * @param options - Options for retrieving the value.
  * @returns The value as an array of strings.
  */
-export function getArray (key: string, options: Options): string[]
+export function getArray (key: string, options: Options | string[]): string[]
 
 /**
  * Get the specified env variable value as an array.
@@ -196,7 +196,7 @@ export function getArray (key: string, options: Options): string[]
  * @param options - Options for retrieving the value.
  * @returns The value as an array of strings.
  */
-export function getArray (key: string, options?: Options): string[] | undefined {
+export function getArray (key: string, options?: Options | string[]): string[] | undefined {
   return custom(
     key,
     (_key, value, opts) => {
@@ -227,7 +227,7 @@ export function getObject (key: string): Record<string, any> | undefined
  * @param options - Options for retrieving the value.
  * @returns The value as an object.
  */
-export function getObject (key: string, options: Options): Record<string, any> | undefined
+export function getObject (key: string, options: Options | Record<string, any>): Record<string, any> | undefined
 
 /**
  * Get the specified env variable value as an object.
@@ -236,7 +236,7 @@ export function getObject (key: string, options: Options): Record<string, any> |
  * @param options - Options for retrieving the value.
  * @returns The value as an object.
  */
-export function getObject (key: string, options?: Options): Record<string, any> | undefined {
+export function getObject (key: string, options?: Options | Record<string, any>): Record<string, any> | undefined {
   return custom(
     key,
     (_key, value, opts) => {
@@ -267,7 +267,7 @@ export function getObject (key: string, options?: Options): Record<string, any> 
  * @param key - The environment variable key.
  * @returns The value as a JSON object.
  */
-export function getJson (key: string): unknown | undefined
+export function getJson<R = unknown> (key: string): R
 
 /**
  * Get the specified env variable value as JSON.
@@ -276,7 +276,7 @@ export function getJson (key: string): unknown | undefined
  * @param options - Options for retrieving the value.
  * @returns The value as a JSON object.
  */
-export function getJson (key: string, options: Options): unknown
+export function getJson<R = unknown> (key: string, options: Options | R): R
 
 /**
  * Get the specified env variable value as JSON.
@@ -285,7 +285,7 @@ export function getJson (key: string, options: Options): unknown
  * @param options - Options for retrieving the value.
  * @returns The value as a JSON object.
  */
-export function getJson (key: string, options?: Options): unknown | undefined {
+export function getJson<R = unknown | undefined> (key: string, options?: Options | R): R {
   return custom(
     key,
     (key, value, opts) => {
@@ -372,7 +372,7 @@ export function getEmail (key: string): string | undefined
  * @param options - Options for retrieving the value.
  * @returns The value as an email.
  */
-export function getEmail (key: string, options: Options): string
+export function getEmail (key: string, options: Options | string): string
 
 /**
  * Get the specified env variable value as an email.
@@ -381,7 +381,7 @@ export function getEmail (key: string, options: Options): string
  * @param options - Options for retrieving the value.
  * @returns The value as an email.
  */
-export function getEmail (key: string, options?: Options): string | undefined {
+export function getEmail (key: string, options?: Options | string): string | undefined {
   return custom(
     key,
     (key, value: string | undefined, opts) => {
@@ -413,7 +413,7 @@ export function getUrl (key: string): string | undefined
  * @param options - Options for retrieving the value.
  * @returns The value as a URL.
  */
-export function getUrl (key: string, options: Options): string
+export function getUrl (key: string, options: Options | string): string
 
 /**
  * Get the specified env variable value as a URL.
@@ -422,7 +422,7 @@ export function getUrl (key: string, options: Options): string
  * @param options - Options for retrieving the value.
  * @returns The value as a URL.
  */
-export function getUrl (key: string, options?: Options): string | undefined {
+export function getUrl (key: string, options?: Options | string): string | undefined {
   return custom(
     key,
     (key, value: string | undefined, opts) => {
@@ -454,7 +454,7 @@ export function getHost (key: string): string | undefined
  * @param options - Options for retrieving the value.
  * @returns The value as a host.
  */
-export function getHost (key: string, options: Options): string
+export function getHost (key: string, options: Options | string): string
 
 /**
  * Get the specified env variable value as a host (IP or URL).
@@ -463,7 +463,7 @@ export function getHost (key: string, options: Options): string
  * @param options - Options for retrieving the value.
  * @returns The value as a host.
  */
-export function getHost (key: string, options?: Options): string | undefined {
+export function getHost (key: string, options?: Options | string): string | undefined {
   return custom(
     key,
     (key, value: string | undefined, opts) => {
