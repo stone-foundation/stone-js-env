@@ -4,24 +4,32 @@ Get the specified env variable value as an enum.
 
 ## Param
 
+**key**
+
 The environment variable key.
 
 ## Param
+
+**enums**
 
 Array of possible enum values or options.
 
 ## Param
 
+**defaultValue**
+
 Default value if not set.
 
 ## Param
+
+**options**
 
 Options for retrieving the value.
 
 ## Call Signature
 
 ```ts
-function getEnum(key, enums): undefined | string;
+function getEnum(key, enums): string | undefined;
 ```
 
 Get the specified env variable value as an enum.
@@ -36,13 +44,13 @@ The environment variable key.
 
 #### enums
 
-Array of possible enum values or options.
+[`Options`](../../declarations/interfaces/Options.md) \| `string`[]
 
-[`Options`](../../declarations/interfaces/Options.md) | `string`[]
+Array of possible enum values or options.
 
 ### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The value as an enum.
 
@@ -68,9 +76,9 @@ The environment variable key.
 
 #### enums
 
-Array of possible enum values or options.
+[`Options`](../../declarations/interfaces/Options.md) \| `string`[]
 
-[`Options`](../../declarations/interfaces/Options.md) | `string`[]
+Array of possible enum values or options.
 
 #### defaultValue
 

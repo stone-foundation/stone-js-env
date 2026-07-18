@@ -1,7 +1,7 @@
 # Function: getEnv()
 
 ```ts
-function getEnv(key): undefined | string;
+function getEnv(key): string | undefined;
 ```
 
 Get system env variables.
@@ -18,6 +18,6 @@ The environment variable key.
 
 ## Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The value of the environment variable.

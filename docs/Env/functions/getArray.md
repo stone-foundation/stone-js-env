@@ -4,16 +4,20 @@ Get the specified env variable value as an array.
 
 ## Param
 
+**key**
+
 The environment variable key.
 
 ## Param
+
+**options**
 
 Options for retrieving the value.
 
 ## Call Signature
 
 ```ts
-function getArray(key): undefined | string[];
+function getArray(key): string[] | undefined;
 ```
 
 Get the specified env variable value as an array.
@@ -28,7 +32,7 @@ The environment variable key.
 
 ### Returns
 
-`undefined` \| `string`[]
+`string`[] \| `undefined`
 
 The value as an array of strings.
 
@@ -50,9 +54,9 @@ The environment variable key.
 
 #### options
 
-Options for retrieving the value.
+[`Options`](../../declarations/interfaces/Options.md) \| `string`[]
 
-[`Options`](../../declarations/interfaces/Options.md) | `string`[]
+Options for retrieving the value.
 
 ### Returns
 

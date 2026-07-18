@@ -7,7 +7,7 @@ Options for retrieving environment variables.
 ### default?
 
 ```ts
-optional default: any;
+optional default?: any;
 ```
 
 The default value if the environment variable is not set.
@@ -17,7 +17,7 @@ The default value if the environment variable is not set.
 ### enums?
 
 ```ts
-optional enums: string[];
+optional enums?: string[];
 ```
 
 An array of allowed values for enum types.
@@ -27,7 +27,7 @@ An array of allowed values for enum types.
 ### format?
 
 ```ts
-optional format: "email" | "host" | "url";
+optional format?: "email" | "host" | "url";
 ```
 
 The format of the environment variable if it's a string. Can be 'url', 'host', or 'email'.
@@ -37,7 +37,7 @@ The format of the environment variable if it's a string. Can be 'url', 'host', o
 ### optional?
 
 ```ts
-optional optional: boolean;
+optional optional?: boolean;
 ```
 
 Whether the environment variable is optional.
@@ -47,7 +47,7 @@ Whether the environment variable is optional.
 ### protocol?
 
 ```ts
-optional protocol: boolean;
+optional protocol?: boolean;
 ```
 
 Whether a protocol is required for URLs.
@@ -57,7 +57,7 @@ Whether a protocol is required for URLs.
 ### separator?
 
 ```ts
-optional separator: string;
+optional separator?: string;
 ```
 
 The separator for parsing array or object values (default is ',').
@@ -67,7 +67,7 @@ The separator for parsing array or object values (default is ',').
 ### tld?
 
 ```ts
-optional tld: boolean;
+optional tld?: boolean;
 ```
 
 Whether a top-level domain is required for URLs or emails.
@@ -77,7 +77,7 @@ Whether a top-level domain is required for URLs or emails.
 ### type?
 
 ```ts
-optional type: 
+optional type?: 
   | "string"
   | "number"
   | "boolean"

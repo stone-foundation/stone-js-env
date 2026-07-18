@@ -4,16 +4,20 @@ Get the specified env variable value as a string.
 
 ## Param
 
+**key**
+
 The environment variable key.
 
 ## Param
+
+**options**
 
 Options for retrieving the value.
 
 ## Call Signature
 
 ```ts
-function getString(key): undefined | string;
+function getString(key): string | undefined;
 ```
 
 Get the specified env variable value as a string.
@@ -28,7 +32,7 @@ The environment variable key.
 
 ### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The value as a string.
 
@@ -50,9 +54,9 @@ The environment variable key.
 
 #### options
 
-Options for retrieving the value.
+`string` \| [`Options`](../../declarations/interfaces/Options.md)
 
-`string` | [`Options`](../../declarations/interfaces/Options.md)
+Options for retrieving the value.
 
 ### Returns
 

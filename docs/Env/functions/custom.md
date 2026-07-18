@@ -31,9 +31,9 @@ The custom validation function.
 
 ### options?
 
-Options for retrieving the value.
+[`Options`](../../declarations/interfaces/Options.md) \| `T`
 
-[`Options`](../../declarations/interfaces/Options.md) | `T`
+Options for retrieving the value.
 
 ## Returns
 

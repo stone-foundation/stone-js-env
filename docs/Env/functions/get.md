@@ -4,16 +4,20 @@ Get the specified env variable value.
 
 ## Param
 
+**key**
+
 The environment variable key.
 
 ## Param
+
+**options**
 
 Options for retrieving the value.
 
 ## Call Signature
 
 ```ts
-function get<T>(key): undefined | T;
+function get<T>(key): T | undefined;
 ```
 
 Get the specified env variable value.
@@ -34,7 +38,7 @@ The environment variable key.
 
 ### Returns
 
-`undefined` \| `T`
+`T` \| `undefined`
 
 The value of the environment variable.
 

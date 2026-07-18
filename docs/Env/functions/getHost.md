@@ -4,16 +4,20 @@ Get the specified env variable value as a host (IP or URL).
 
 ## Param
 
+**key**
+
 The environment variable key.
 
 ## Param
+
+**options**
 
 Options for retrieving the value.
 
 ## Call Signature
 
 ```ts
-function getHost(key): undefined | string;
+function getHost(key): string | undefined;
 ```
 
 Get the specified env variable value as a host (IP or URL).
@@ -28,7 +32,7 @@ The environment variable key.
 
 ### Returns
 
-`undefined` \| `string`
+`string` \| `undefined`
 
 The value as a host.
 
@@ -50,9 +54,9 @@ The environment variable key.
 
 #### options
 
-Options for retrieving the value.
+`string` \| [`Options`](../../declarations/interfaces/Options.md)
 
-`string` | [`Options`](../../declarations/interfaces/Options.md)
+Options for retrieving the value.
 
 ### Returns
 

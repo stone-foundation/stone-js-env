@@ -4,16 +4,20 @@ Get the specified env variable value as a boolean.
 
 ## Param
 
+**key**
+
 The environment variable key.
 
 ## Param
+
+**options**
 
 Options for retrieving the value.
 
 ## Call Signature
 
 ```ts
-function getBoolean(key): undefined | boolean;
+function getBoolean(key): boolean | undefined;
 ```
 
 Get the specified env variable value as a boolean.
@@ -28,7 +32,7 @@ The environment variable key.
 
 ### Returns
 
-`undefined` \| `boolean`
+`boolean` \| `undefined`
 
 The value as a boolean.
 
@@ -50,9 +54,9 @@ The environment variable key.
 
 #### options
 
-Options for retrieving the value.
+`boolean` \| [`Options`](../../declarations/interfaces/Options.md)
 
-`boolean` | [`Options`](../../declarations/interfaces/Options.md)
+Options for retrieving the value.
 
 ### Returns
 

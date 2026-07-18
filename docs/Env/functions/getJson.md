@@ -4,9 +4,13 @@ Get the specified env variable value as JSON.
 
 ## Param
 
+**key**
+
 The environment variable key.
 
 ## Param
+
+**options**
 
 Options for retrieving the value.
 
@@ -62,9 +66,9 @@ The environment variable key.
 
 #### options
 
-Options for retrieving the value.
+[`Options`](../../declarations/interfaces/Options.md) \| `R`
 
-[`Options`](../../declarations/interfaces/Options.md) | `R`
+Options for retrieving the value.
 
 ### Returns
 
