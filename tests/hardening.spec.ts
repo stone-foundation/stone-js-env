@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import * as Env from '../src/Env'
 
 describe('Env — hardening', () => {
@@ -41,5 +41,19 @@ describe('Env — hardening', () => {
     const opts: any = { default: 5 }
     Env.getNumber('H_MISSING', opts)
     expect(Object.prototype.hasOwnProperty.call(opts, 'optional')).toBe(false)
+  })
+
+  it('getUrl returns its default when the variable is absent', () => {
+    expect(Env.getUrl('H_MISSING', 'http://localhost')).toBe('http://localhost')
+  })
+
+  it('getHost returns its default when the variable is absent', () => {
+    expect(Env.getHost('H_MISSING', '127.0.0.1')).toBe('127.0.0.1')
+  })
+
+  it('masks a very short invalid value as ** in error messages', () => {
+    process.env.H_URL = 'ab'
+    expect(() => Env.getUrl('H_URL')).toThrow(/\*\*/)
+    delete process.env.H_URL
   })
 })
