@@ -138,7 +138,7 @@ describe('Env class', () => {
 
     it('should throw an error when an invalid host is provided with host format', () => {
       process.env.INVALID_HOST = 'not-a-host'
-      expect(() => Env.getString('INVALID_HOST', { format: 'host' })).toThrow('Value for INVALID_HOST must be a valid host (URL or IP). Received: not-a-host')
+      expect(() => Env.getString('INVALID_HOST', { format: 'host' })).toThrow('Value for INVALID_HOST must be a valid host (URL or IP).')
     })
 
     it('should throw an error when an invalid email is provided with email format', () => {
@@ -154,14 +154,14 @@ describe('Env class', () => {
 
     it('should throw an error when an invalid number is provided', () => {
       process.env.TEST_NUMBER = 'not-a-number'
-      expect(() => Env.getNumber('TEST_NUMBER')).toThrow('Value for TEST_NUMBER must be a valid number, received: not-a-number')
+      expect(() => Env.getNumber('TEST_NUMBER')).toThrow('Value for TEST_NUMBER must be a valid number')
     })
   })
 
   describe('getBoolean', () => {
     it('should throw an error when an invalid boolean is provided', () => {
       process.env.TEST_BOOLEAN = 'not-a-boolean'
-      expect(() => Env.getBoolean('TEST_BOOLEAN')).toThrow('Value for TEST_BOOLEAN must be a valid boolean, received: not-a-boolean')
+      expect(() => Env.getBoolean('TEST_BOOLEAN')).toThrow('Value for TEST_BOOLEAN must be a valid boolean')
     })
   })
 
@@ -192,7 +192,7 @@ describe('Env class', () => {
     it('should throw an error if the value is not one of the allowed enum values and optional is false', () => {
       process.env.TEST_ENUM = 'invalidOption'
       expect(() => Env.getEnum('TEST_ENUM', ['option1', 'option2'])).toThrow(
-        'Value for TEST_ENUM must be one of: option1,option2. Received: invalidOption'
+        'Value for TEST_ENUM must be one of: option1,option2.'
       )
     })
 

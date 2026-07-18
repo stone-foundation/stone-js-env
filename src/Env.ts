@@ -121,14 +121,19 @@ export function getNumber (key: string, options?: Options | number): number | un
   return custom(
     key,
     (key: string, value: string | undefined, opts) => {
-      const schema = pipe(number())
-      const result = safeParse(schema, Number(value))
-
-      if (value !== undefined && !result.success) {
-        throw new EnvError(`Value for ${key} must be a valid number, received: ${String(value)}`)
+      // Absent/empty: return the provided default (as a number) or undefined — never a
+      // silent 0 from Number(null)/Number('').
+      if (value === undefined || value === '') {
+        return opts.default === null || opts.default === undefined ? undefined : Number(opts.default)
       }
 
-      return Number(value ?? opts.default)
+      const result = safeParse(pipe(number()), Number(value))
+
+      if (!result.success) {
+        throw new EnvError(`Value for ${key} must be a valid number, received: ${maskValue(value)}`)
+      }
+
+      return Number(value)
     },
     options
   )
@@ -161,9 +166,14 @@ export function getBoolean (key: string, options: Options | boolean): boolean
 export function getBoolean (key: string, options?: Options | boolean): boolean | undefined {
   return custom(
     key,
-    (key: string, value: string | undefined) => {
-      if (value !== undefined && !['true', 'false', '1', '0'].includes(String(value).toLowerCase())) {
-        throw new EnvError(`Value for ${key} must be a valid boolean, received: ${value}`)
+    (key: string, value: string | undefined, opts) => {
+      // Absent: honor the provided default instead of silently returning false.
+      if (value === undefined) {
+        return opts.default === null || opts.default === undefined ? undefined : Boolean(opts.default)
+      }
+
+      if (!['true', 'false', '1', '0'].includes(String(value).toLowerCase())) {
+        throw new EnvError(`Value for ${key} must be a valid boolean, received: ${maskValue(value)}`)
       }
 
       return ['true', '1'].includes(String(value).toLowerCase())
@@ -348,7 +358,7 @@ export function getEnum (key: string, enums: string[] | Options = [], defaultVal
     key,
     (key, value: string | undefined, opts) => {
       if (opts.optional === false && (value === undefined || opts.enums === undefined || !(opts.enums?.includes(value)))) {
-        throw new EnvError(`Value for ${key} must be one of: ${String(opts.enums)}. Received: ${String(value)}`)
+        throw new EnvError(`Value for ${key} must be one of: ${String(opts.enums)}. Received: ${maskValue(value)}`)
       }
 
       return value ?? opts.default
@@ -389,7 +399,7 @@ export function getEmail (key: string, options?: Options | string): string | und
       const result = safeParse(schema, value)
 
       if (value !== undefined && !result.success) {
-        throw new EnvError(`Value for ${key} must be a valid email address. Received: ${String(value)}`)
+        throw new EnvError(`Value for ${key} must be a valid email address. Received: ${maskValue(value)}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -430,7 +440,7 @@ export function getUrl (key: string, options?: Options | string): string | undef
       const result = safeParse(schema, value)
 
       if (value !== undefined && !result.success) {
-        throw new EnvError(`Value for ${key} must be a valid URL. Received: ${String(value)}`)
+        throw new EnvError(`Value for ${key} must be a valid URL. Received: ${maskValue(value)}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -473,7 +483,7 @@ export function getHost (key: string, options?: Options | string): string | unde
       const resultUrl = safeParse(schemaUrl, value)
 
       if (value !== undefined && !resultIp.success && !resultUrl.success) {
-        throw new EnvError(`Value for ${key} must be a valid host (URL or IP). Received: ${String(value)}`)
+        throw new EnvError(`Value for ${key} must be a valid host (URL or IP). Received: ${maskValue(value)}`)
       }
 
       return value !== undefined ? String(value) : opts.default
@@ -491,7 +501,10 @@ export function getHost (key: string, options?: Options | string): string | unde
  * @returns The validated value of the environment variable.
  */
 export function custom<T = any> (key: string, validator: (key: string, value: string | undefined, options: Options) => T, options?: Options | T): T {
-  const cachedValue = envCache[key]
+  // Cache per (key, accessor-type): the validator source is stable per accessor, so
+  // get('PORT') (string) and getNumber('PORT') (number) never share a cache entry.
+  const cacheKey = `${key} ${validator.toString()}`
+  const cachedValue = envCache[cacheKey]
 
   if (cachedValue !== undefined) {
     return cachedValue
@@ -507,11 +520,25 @@ export function custom<T = any> (key: string, validator: (key: string, value: st
 
   const validatedValue = validator(key, value, options)
 
-  if (validatedValue !== options.default) {
-    envCache[key] = validatedValue
+  if (validatedValue !== undefined) {
+    envCache[cacheKey] = validatedValue
   }
 
   return validatedValue
+}
+
+/**
+ * Redact a value for safe inclusion in error messages. Secrets (connection strings,
+ * tokens, passwords) must never appear verbatim in logs/error reports.
+ *
+ * @param value - The raw value.
+ * @returns A masked representation exposing only a short hint and the length.
+ */
+function maskValue (value: unknown): string {
+  const str = String(value ?? '')
+  if (str.length === 0) { return '<empty>' }
+  if (str.length <= 2) { return '**' }
+  return `${str.slice(0, 1)}***(${str.length} chars)`
 }
 
 /**
@@ -606,14 +633,16 @@ function isBrowser (): boolean {
  * @returns The normalized options.
  */
 function normalizeOptions (options?: Options | any): Options {
-  if (options === undefined || Array.isArray(options) || typeof options !== 'object') {
-    options = { default: options }
+  // Never mutate the caller's object: build a fresh, normalized copy.
+  const base = (options === undefined || Array.isArray(options) || typeof options !== 'object')
+    ? { default: options }
+    : { ...options }
+
+  return {
+    ...base,
+    optional: base.optional ?? base.default !== undefined,
+    default: base.default ?? null
   }
-
-  options.optional ??= options.default !== undefined
-  options.default ??= null
-
-  return options
 }
 
 /**
